@@ -1,20 +1,26 @@
 
-
+import React, {useState} from 'react';
+import Modal from './components/modal'
 
 export default function Home() {
 
- 
+  
+  const [modal, setModal] = useState(false);
+  const Toggle = () => setModal(!modal);
+  
+
+console.log("modal", modal); 
   return (
     <div className="home">
 
       <div className='home__top'>
-        <div className='home__top-left'>
+        <div onClick={() => Toggle()} className='home__top-left'>
           <h3>LEFT</h3>
         </div>
-        <div className='home__top-middle'>
+        <div onClick={() => Toggle()} className='home__top-middle'>
           <h3>MIDDLE</h3>
         </div>
-        <div className='home__top-right'>
+        <div onClick={() => Toggle()} className='home__top-right'>
           <h3>RIGHT</h3>
         </div>
       </div>
@@ -49,6 +55,8 @@ export default function Home() {
         </div>
 
       </div>
+
+      <Modal show={modal} title="My Modal" close={Toggle}></Modal>
 
     </div>
   )
