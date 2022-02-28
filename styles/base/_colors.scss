@@ -1,0 +1,26 @@
+// COLORS
+$color-black: #373332;
+$color-white: #fdf8f5;
+$color-lighttan: #fdf8f5;
+$color-grey: #e9e4e1;
+$color-darktan: #dabfae;
+$color-darkred: #713c3b;
+$color-brown: #664c3c;
+
+//GRADIENTS
+$gradient-brand: linear-gradient(90deg, #ff2700 0%, #ff8700 60.01%, rgba(255, 132, 0, 0.69) 99.49%);
+
+$gradient-1: radial-gradient(ellipse at top left, #f9e5de, transparentize(#f9e5de, 1) 70%),
+  radial-gradient(ellipse at top right, #fbede8, transparentize(#fbede8, 1) 70%),
+  radial-gradient(ellipse at bottom left, #f9f2ea, transparentize(#f9f2ea, 1) 70%),
+  radial-gradient(ellipse at bottom right, #f9e5de, transparentize(#f9e5de, 1) 70%);
+
+$gradient-2: radial-gradient(ellipse at top left, #fdf4f3, transparentize(#fdf4f3, 1) 70%),
+  radial-gradient(ellipse at top right, #f0d2ce, transparentize(#f0d2ce, 1) 70%),
+  radial-gradient(ellipse at bottom left, #f8f2e0, transparentize(#f8f2e0, 1) 70%),
+  radial-gradient(ellipse at bottom right, #eed6c8, transparentize(#eed6c8, 1) 70%);
+
+$gradient-3: radial-gradient(ellipse at top left, #cdc5cb, transparentize(#cdc5cb, 1) 70%),
+  radial-gradient(ellipse at top right, #f9ebdc, transparentize(#f9ebdc, 1) 70%),
+  radial-gradient(ellipse at bottom left, #f4e1db, transparentize(#f4e1db, 1) 70%),
+  radial-gradient(ellipse at bottom right, #f7dbcb, transparentize(#f7dbcb, 1) 70%);

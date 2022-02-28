@@ -1,0 +1,45 @@
+html {
+  min-height: 100%;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background-color: white;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  //max-width: 2000px;
+  margin: auto;
+  overflow-x: hidden;
+
+  @media (max-width: 800) {
+    overflow-x: hidden;
+  }
+
+  &.no-scroll {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 2px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: black;
+}
