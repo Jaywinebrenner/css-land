@@ -2,16 +2,13 @@
 
 import React, {useRef, useEffect} from 'react'
 
-const Modal = ({ show, close }) => {
+const Modal = ({ modalVisible, toggleModal }) => {
     const ref = useRef()
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
-            // If the menu is open and the clicked target is not within the menu,
-            // then close the menu
-            if (show && ref.current && !ref.current.contains(e.target)) {
-              console.log("made it");
-            close()
+            if (modalVisible && ref.current && !ref.current.contains(e.target)) {
+              toggleModal();
           }
         }
     
@@ -21,18 +18,18 @@ const Modal = ({ show, close }) => {
           // Cleanup the event listener
           document.removeEventListener("mousedown", checkIfClickedOutside)
         }
-      }, [show])
+      }, [modalVisible])
 
 
   return (
     <>
      {
-     show ?
+     modalVisible ?
      
      <div  className="modalContainer">
         <div ref={ref} className="modal" >
           <main  className="modal_content">
-              <div onClick={()=> close()} className="x">x</div>
+              <div onClick={()=> toggleModal()} className="x">x</div>
           </main>
         </div>
       </div>

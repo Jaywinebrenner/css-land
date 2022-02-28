@@ -10,9 +10,18 @@
         border-bottom: 8px solid #000;
         transition: .5s;
         cursor: pointer;
+        @media (max-width: 1000px) {
+            flex: 0 0 50%;
+        }
     }
     &__top-right {
         border-right: 8px solid #000;
+    }
+    &__top-middle {
+        @media (max-width: 1000px) {
+            display: none;
+        }
+   
     }
     &__top-left:hover, &__top-middle:hover,  &__top-right:hover{
         background-color: black;
@@ -28,7 +37,6 @@
         border-bottom: 8px solid #000;
         border-left: 8px solid #000;
         @media (max-width: 1000px) {
-            // display: block;
             border-right: 8px solid #000;
           }
     }
@@ -85,6 +93,10 @@
 
     &__main {
         display: flex;
+        @media (max-width: 1000px) {
+            display: block;
+            border-left: 8px solid #000;
+          }
         h4 {
             font-size: 40px;
             margin-bottom: 40px;
@@ -97,14 +109,14 @@
     }
     &__main-left {
         background-color: black;
-        padding: 20px;
+        padding: 20px 100px;
         flex: 0 0 50%;
         h4, p{
             color: white;
         }
     }
     &__main-right {
-        padding: 20px;
+        padding: 20px 100px;
         background-color: white;
         border-bottom: 8px solid #000;
         border-right: 8px solid #000;

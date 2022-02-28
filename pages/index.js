@@ -5,22 +5,22 @@ import Modal from './components/modal'
 export default function Home() {
 
   
-  const [modal, setModal] = useState(false);
-  const Toggle = () => setModal(!modal);
+  const [modalVisible, setModalVisible] = useState(false);
+  const toggleModal = () => setModalVisible(!modalVisible);
   
 
-console.log("modal", modal); 
+console.log("modal", modalVisible); 
   return (
     <div className="home">
 
       <div className='home__top'>
-        <div onClick={() => Toggle()} className='home__top-left'>
+        <div onClick={() => toggleModal()} className='home__top-left'>
           <h3>LEFT</h3>
         </div>
-        <div onClick={() => Toggle()} className='home__top-middle'>
+        <div onClick={() => toggleModal()} className='home__top-middle'>
           <h3>MIDDLE</h3>
         </div>
-        <div onClick={() => Toggle()} className='home__top-right'>
+        <div onClick={() => toggleModal()} className='home__top-right'>
           <h3>RIGHT</h3>
         </div>
       </div>
@@ -56,7 +56,7 @@ console.log("modal", modal);
 
       </div>
 
-      <Modal show={modal} title="My Modal" close={Toggle}></Modal>
+      <Modal modalVisible={modalVisible} title="My Modal" toggleModal={toggleModal}></Modal>
 
     </div>
   )

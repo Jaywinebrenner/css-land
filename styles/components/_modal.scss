@@ -15,11 +15,14 @@
       height: 60vh;
       background-color: #fff;
       padding: 2rem;
-  
       background-color: white;
       backdrop-filter: blur(5px);
       box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
       border: 8px solid #000;
+      @media (max-width: 1000px) {
+        width: 100vw;
+        height: 100vh;
+      }
   
       &_content {
 
