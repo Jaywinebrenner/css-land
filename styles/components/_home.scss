@@ -35,6 +35,7 @@
         }
     }
     &__hero-left-top {
+        border-bottom: 8px solid #000;
         h1 {    
             font-size: 9vw;
             line-height: 10px;
@@ -59,12 +60,20 @@
 
     &__main {
         display: flex;
-        
+        h4 {
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+        p {
+            font-size: 28px;
+            line-height: 32px;
+        }
 
     }
     &__main-left {
         background-color: black;
         padding: 20px;
+        flex: 0 0 50%;
         h4, p{
             color: white;
         }
