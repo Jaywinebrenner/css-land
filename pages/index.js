@@ -1,6 +1,7 @@
 
 import React, {useState} from 'react';
-import Modal from './components/Modal'
+import Modal from './components/Modal';
+import Link from 'next/link'
 
 export default function Home() {
 
@@ -14,8 +15,10 @@ console.log("modal", modalVisible);
     <div className="home">
 
       <div className='home__top'>
-        <div onClick={() => toggleModal()} className='home__top-left'>
-          <h3>LEFT</h3>
+        <div className='home__top-left'>
+          <Link href="/contextLand">
+            <h3>CONTEXT</h3>
+          </Link>
         </div>
         <div onClick={() => toggleModal()} className='home__top-middle'>
           <h3>MIDDLE</h3>
@@ -56,7 +59,7 @@ console.log("modal", modalVisible);
 
       </div>
 
-      <Modal modalVisible={modalVisible} title="My Modal" toggleModal={toggleModal}></Modal>
+      <Modal modalVisible={modalVisible} title="Context Modal" toggleModal={toggleModal}></Modal>
 
     </div>
   )

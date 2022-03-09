@@ -31,6 +31,8 @@ const Modal = ({ modalVisible, toggleModal }) => {
           <main  className="modal_content">
               <div onClick={()=> toggleModal()} className="x">x</div>
           </main>
+
+          
         </div>
       </div>
       : null
