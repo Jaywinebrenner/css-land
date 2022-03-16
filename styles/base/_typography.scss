@@ -19,6 +19,10 @@ p {
   padding: 0;
 }
 
+// h1 {
+//   font-size: calc(60px + (90 - 60) * ((100vw - #{$minScreen}px) / (#{$maxScreen} - #{$minScreen})));
+// }
+
 h3,
 .h3 {
   font-size: calc(42px + (64 - 42) * ((100vw - #{$minScreen}px) / (#{$maxScreen} - #{$minScreen})));

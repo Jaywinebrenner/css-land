@@ -5,21 +5,25 @@
         flex: 0 0 20%;
         background-color: black;
         height: 100vh;
-        display: flex;
-        justify-content: center;
+
     }
     &__right-col {
         
     }
     &__home-wrapper {
         cursor: pointer;
-        padding-top: 10px;
+        text-align: center;
+        background-color: white;
+        border: 8px solid #000;
+        &:hover {
+            background-color: black;
+        }
         h3 {
-            color: white;
-            transition: .3s;
+            color: black;
+            transition: .1s;
         }
         h3:hover {
-            opacity: .3;
+            color: white;
         }
 
     }
