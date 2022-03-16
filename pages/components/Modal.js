@@ -2,8 +2,10 @@
 
 import React, {useRef, useEffect} from 'react'
 
-const Modal = ({ modalVisible, toggleModal }) => {
-    const ref = useRef()
+const Modal = ({ modalVisible, toggleModal, title }) => {
+    const ref = useRef();
+
+  console.log("title", title);
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
@@ -30,8 +32,9 @@ const Modal = ({ modalVisible, toggleModal }) => {
         <div ref={ref} className="modal" >
           <main  className="modal_content">
               <div onClick={()=> toggleModal()} className="x">x</div>
+              <img src="jay.jpeg"/>
           </main>
-
+  
           
         </div>
       </div>
