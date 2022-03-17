@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import ProjectSlider from "./ProjectSlider";
 
 const NavigationDrawer = ({
   isHovered,
@@ -11,7 +12,10 @@ const NavigationDrawer = ({
   drawerIsOpening,
   drawerIsClosing,
   handleCloseDrawerViaX,
+  props
 }) => {
+
+
  
   const router = useRouter();
   const handleSettingLink = (e) => {
@@ -96,6 +100,7 @@ const NavigationDrawer = ({
         className="nav-drawer__x-wrapper">
         <FontAwesomeIcon className="weather-icon" icon={faXmark} />
       </div>
+        <ProjectSlider props={props}/>
 
     </div>
   );

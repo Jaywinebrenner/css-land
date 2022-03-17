@@ -5,8 +5,6 @@ import React, {useRef, useEffect} from 'react'
 const Modal = ({ modalVisible, toggleModal, title }) => {
     const ref = useRef();
 
-  console.log("title", title);
-
     useEffect(() => {
         const checkIfClickedOutside = e => {
             if (modalVisible && ref.current && !ref.current.contains(e.target)) {
