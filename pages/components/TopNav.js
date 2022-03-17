@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import Link from 'next/link';
 import NavigationDrawer from './NavigationDrawer';
 
-const TopNav = () => {
+const TopNav = ({props}) => {
 
   const [drawerIsOpening, setDrawerIsOpening] = useState(false);
   const [drawerIsClosing, setDrawerIsClosing] = useState(false);
@@ -52,7 +52,6 @@ const TopNav = () => {
     setTimeout(() => {loadDrawerAnimation();}, 350);
   }, []);
 
-  console.log("hov", isHovered);
 
   return (
     <div className='top'>
@@ -78,6 +77,7 @@ const TopNav = () => {
             drawerIsOpening={drawerIsOpening}
             drawerIsClosing={drawerIsClosing}
             handleCloseDrawerViaX={handleCloseDrawerViaX}
+            props={props}
           />
     </div>
 

@@ -1,53 +1,30 @@
 
 import React, {useEffect, useState} from 'react';
 import Modal from './components/Modal';
-import Link from 'next/link';
-import { faCloud } from '@fortawesome/free-solid-svg-icons';
-import { faSun } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import TopNav from './components/TopNav';
 
-export default function Home({weatherData}) {
+export default function Home({weatherData, props}) {
   const [description, setDescription] = useState();
-const [temp, setTemp] = useState();
+  const [temp, setTemp] = useState();
+  const [weatherIcon, setWeatherIcon] = useState();
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-
-
-
-console.log("weather", weatherData)
   
   const [modalVisible, setModalVisible] = useState(false);
   const toggleModal = () => setModalVisible(!modalVisible);
 
   useEffect(() => {
-    setDescription(capitalizeFirstLetter(weatherData.weather[0].description))
-    setTemp(weatherData.main.temp)
+    setDescription(capitalizeFirstLetter(weatherData.weather[0].description));
+    setTemp(weatherData.main.temp);
+    setWeatherIcon("http://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png");
   });
   
 
-console.log("modal", modalVisible); 
   return (
     <div className="home">
-
-      {/* <div className='home__top'>
-        <div className='home__top-left'>
-          <Link href="/contextLand">
-            <h3>EMPTY</h3>
-          </Link>
-        </div>
-        <div className='home__top-middle'>
-          <div onClick={() => toggleModal()} className='home__top-right'>
-            <h3>MIDDLE</h3>
-          </div>
-        </div>
-        <div onClick={() => toggleModal()} className='home__top-right'>
-          <h3>RIGHT</h3>
-        </div>
-      </div> */}
-      <TopNav/>
+      <TopNav props={props}/>
 
       <div className="home__hero">
         <div className="home__hero-left">
@@ -62,7 +39,7 @@ console.log("modal", modalVisible);
      
           <div className="home__hero-left-bottom--one">
             <div >
-                  <h3>FULL STACK DEVELOPER SPECIALIZING IN HEADLESS DEVELOPMENT</h3>
+                  <h3>THIS SITE USES WORDPRESS AS HEADLESS CMS WITH NEXT.JS</h3>
               </div>
               <div className="home__hero-left-bottom--two">
                 <div className="weather-wrapper">
@@ -70,11 +47,7 @@ console.log("modal", modalVisible);
                    <p>{description}</p>
                    <p>{temp}° F</p>
                    <div className="icon-wrapper">
-                   {description && description.toLowerCase().includes("cloud") ?
-                   <FontAwesomeIcon className="weather-icon" icon={faCloud} />
-                   :
-                   <FontAwesomeIcon className="weather-icon"  icon={faSun} />
-                  }
+                      <img src={weatherIcon}/>
                    </div>
                 </div>
               </div>
@@ -90,7 +63,7 @@ console.log("modal", modalVisible);
       <div className="home__main">
         <div className="home__main-left">
             <h4>Odio dignissimos</h4>
-            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+            <p>Full stack developer with a passion for code, problem solving and creative collaboration with an award winning background in filmmaking and advertising.</p>
         </div>
         <div className="home__main-right">
             <h4>Dolores et quas molestias</h4>
@@ -111,12 +84,17 @@ console.log("modal", modalVisible);
 
 export async function getServerSideProps() {
 
-  const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Portland&units=imperial&APPID=${process.env.WEATHER_API}`)
-  let weatherData = await res.json();
+  const weatherRes = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Portland&units=imperial&APPID=${process.env.WEATHER_API}`)
+  let weatherData = await weatherRes.json();
+
+
+  const res = await fetch('http://localhost:8888/jay-winebrenner-resume-3.0/wp-json/wp/v2/pages');
+  const props = await res.json()
 
   return {
     props: {
       weatherData, 
+      props
     },
   };
 }

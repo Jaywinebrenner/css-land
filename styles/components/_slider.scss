@@ -1,0 +1,72 @@
+
+
+.slider {
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3%;
+
+    @media (max-width: 600px) {
+        height: 35rem;
+    }
+    #projects-id {
+        background-color: pink!important;
+    }
+    &__title {
+        text-align: center;
+        font-size: 5rem;
+        color: white;
+        margin: 0;
+        text-decoration: underline;
+        padding-bottom: 50px;
+    }
+    &__slide {
+        display: block;
+        img {
+            margin: 0 auto;
+            max-width: 800px;
+            max-height: 400px;
+            height: 330px;
+        }
+    }
+    &__text-wrapper {
+        text-align: center;
+        width: 450px;
+        margin: 0 auto;
+        h2 {
+            transition: .3s;
+            margin-bottom: 8px;
+        }
+        h2:hover {
+        
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 30px;
+            color: white;
+        }
+    }
+
+
+
+    .slick-arrow {
+        width: 200px;
+        z-index: 3;
+    }
+    @media (max-width: 600px) {
+        h2 {
+            display: none;
+        }
+        p {
+            display: none;
+        }
+        img {
+            max-width: 90vw;
+        }
+        .slick-next {
+            display: none!important;
+        }
+      }
+}
