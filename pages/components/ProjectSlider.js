@@ -18,37 +18,11 @@ export default function ProjectSlider({props}) {
 
     return (
         <div id="projects-id" className="slider">
-            <h1 className="slider__title">Projects</h1>
-            <div className="slider__checkout-circle">
-                {/* <h6>Check this project out!</h6> */}
-            </div>
+            <h1 className="slider__title">PROJECTS</h1>
             <div className="slider__checkout-inner-circle"></div>
             <div className="slider__line-one"></div>
             <div className="slider__line-two"></div>
-            {/* <Slider {...settings}>
-     
-            <div className="slider__slide">
-                RENDERED
-             
-                <div className="slider__text-wrapper">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Garfield_the_Cat.svg/1200px-Garfield_the_Cat.svg.png"/>
-                 <h2>zFART</h2>
-        
-                    <p>AFART</p>
-                </div>
-            </div>
-            <div className="slider__slide">
-                RENDERED
-             
-                <div className="slider__text-wrapper">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Garfield_the_Cat.svg/1200px-Garfield_the_Cat.svg.png"/>
-                 <h2>zFART</h2>
-        
-                    <p>AFART</p>
-                </div>
-            </div>
-
-                </Slider>  */}
+ 
 
 
             <Slider {...settings}>

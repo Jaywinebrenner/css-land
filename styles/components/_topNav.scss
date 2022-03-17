@@ -1,6 +1,10 @@
 
     .top {
         display: flex;
+        @media (max-width: 1000px) {
+            display: block;
+            border: 8px solid #000;
+        }
     }
     .top-left, .top-middle,  .top-right{
         flex: 0 0 33.333%;
@@ -8,27 +12,36 @@
         transition: .5s;
         cursor: pointer;
         @media (max-width: 1000px) {
-            flex: 0 0 50%;
+           
         }
     }
     .top-left {
-        border-left: 8px solid #000;
         border-top: 8px solid #000;
         border-bottom: 8px solid #000;
+        border-left: 8px solid #000;
+        @media (max-width: 1000px) {
+            border-top: none;
+            border-left: none;
+            border-bottom: 8px solid #000;
+        }
     }
     .top-middle {
        border: 8px solid #000;
+       @media (max-width: 1000px) {
+        border-right: none;
+        border-left: none;
+        border-top: none;
+        border-bottom: none;
+    }
     }
     .top-right {
         border-top: 8px solid #000;
         border-bottom: 8px solid #000;
         border-right: 8px solid #000;
-    }
-    .top-middle {
         @media (max-width: 1000px) {
-            display: none;
+            border-bottom: none;
+            border-right: none;
         }
-   
     }
     .top-left:hover, .top-middle:hover,  .top-right:hover{
         background-color: black;

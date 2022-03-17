@@ -34,10 +34,12 @@
             margin: 0;
             display: inline;
             line-height: .9;
-            @media (max-width: 1480px) {
-                line-height: .5;
-                // display: block;
+  
+            @media (max-width: 700px) {
+                display: block;
+                line-height: .7;
               }
+
         }
         span::before {
             content: "\A";
@@ -89,18 +91,34 @@
             display: flex;
             @media (max-width: 1480px) {
                 border-bottom: 8px solid #000;
+                display: block;
               }
 
         }
         &--two {
             flex: 0 0 15%;
             border-left: 8px solid #000;
+            @media (max-width: 1480px) {
+                border-top: 8px solid #000;
+                border-left: none;
+
+              }
             .weather-wrapper {
                 display: flex;
                 flex-direction: column;
                 height: 100%;
                 padding: 15px 15px 0 15px;
                 min-width: 180px;
+                @media (max-width: 1480px) {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                  }
+                  @media (max-width: 700px) {
+
+                    flex-direction: column;
+     
+                  }
                 
                 p, h6 {
                     padding: 0;
@@ -108,6 +126,15 @@
                 }
                 p {
                     font-size: 18px;
+                    @media (max-width: 1480px) {
+                        flex: 0 0 25%;
+                        text-align: center;
+                      }
+                }
+                img {
+                    @media (max-width: 1480px) {
+                        flex: 0 0 25%;
+                      }
                 }
                 p:first-child{
                     text-decoration: underline;
@@ -115,6 +142,9 @@
                 }
                 .icon-wrapper {
                     transform: translateX(-12px);
+                    @media (max-width: 1480px) {
+                        margin: 0 auto;
+                      }
                     img {
                         width: 50px;
                     }
@@ -167,6 +197,9 @@
         background-color: black;
         padding: 20px 100px;
         flex: 0 0 50%;
+        @media (max-width: 700px) {
+            padding: 5px;;
+        }
         h4, p{
             color: white;
         }
@@ -176,5 +209,8 @@
         background-color: white;
         border-bottom: 8px solid #000;
         border-right: 8px solid #000;
+        @media (max-width: 700px) {
+            padding: 5px;;
+        }
     }
 }

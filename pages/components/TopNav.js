@@ -26,8 +26,10 @@ const TopNav = ({props}) => {
   }
 
 
-  const handleOnMouseEnter = () => {
-    setIsHovered(true);
+  const handleOnMouseEnter = (drawer) => {
+    drawer === "Projects" ? setIsHovered(true) :null;
+    drawer === "Education" ? setIsHovered(true) :null;
+
   }
 
   const handleOnMouseLeave = () => {
@@ -61,15 +63,17 @@ const TopNav = ({props}) => {
         </Link>
         </div>
 
-        <div onClick={() => toggleModal()} className='top-middle'>
-            <h3>MIDDLE</h3>
+        <div onClick={() => handleDrawerOpen()}
+             onMouseEnter={() => handleOnMouseEnter("Education")}
+             onMouseLeave={() => handleOnMouseLeave("Education")} className='top-middle'>
+            <h3>EDUCATION</h3>
         </div>
       
         <div onClick={() => handleDrawerOpen()}
-             onMouseEnter={() => handleOnMouseEnter()}
-             onMouseLeave={() => handleOnMouseLeave()}
+             onMouseEnter={() => handleOnMouseEnter("Projects")}
+             onMouseLeave={() => handleOnMouseLeave("Projects")}
              className='top-right'>
-        <h3>RIGHT</h3>
+        <h3>PROJECTS</h3>
         </div>
         <NavigationDrawer
             isHovered={isHovered}
