@@ -29,7 +29,8 @@ export default function Home({weatherData, props}) {
       <div className="home__hero">
         <div className="home__hero-left">
           <div className="home__hero-left-top">
-              <h1>JAY</h1><h2>WINEBR</h2><h2>ENNER</h2>
+              {/* <h1>JAY</h1><h2>WINEBR</h2><h2>ENNER</h2> */}
+              <h1>JAY</h1><h2>WINEBRENNER</h2>
               <div onClick={()=> toggleModal()} className="img-link-wrapper">
                 <p>&lt;img/&gt;</p>
               </div>
