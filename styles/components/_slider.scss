@@ -7,16 +7,12 @@
     justify-content: center;
     flex-direction: column;
     margin-top: 3%;
-
     @media (max-width: 600px) {
         height: 35rem;
     }
-    #projects-id {
-        background-color: pink!important;
-    }
     &__title {
         text-align: center;
-        font-size: 5rem;
+        font-size: 4rem;
         color: white;
         margin: 0;
         text-decoration: underline;
@@ -62,13 +58,22 @@
         z-index: 3;
         right: 100px;
         top: 145px;
+        right: 169px;
+        @media (max-width: 800px) {
+            top: 401px;
+            width: 0px;
+        }
     }
     .slick-prev {
         left: 100px;
     }
     .slick-prev:before, .slick-next:before {
         font-size: 100px;
-        
+        @media (max-width: 800px) {
+            font-size: 70px;
+        }
+    }
+    .slick-next{
 
     }
     @media (max-width: 600px) {
@@ -82,7 +87,7 @@
             max-width: 90vw;
         }
         .slick-next {
-            display: none!important;
+            // display: none!important;
         }
       }
       .slick-dots li button:before {

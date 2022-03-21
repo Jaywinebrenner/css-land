@@ -6,7 +6,6 @@ import Slider from "react-slick";
 import Link from 'next/link'
 
 export default function ProjectSlider({props}) {
-    console.log("props on slider", props[0].acf.slider);
 
     var settings = {
         dots: true,

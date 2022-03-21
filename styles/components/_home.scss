@@ -11,14 +11,12 @@
     }
     &__hero-left {
         flex: 1;
-        @media (max-width: 1000px) {
-            // text-align: center;
-          }
         h3 {
             padding-left: 20px;
         }
     }
     &__hero-left-top {
+        // z-index: 1;
         position: relative;
         border-bottom: 8px solid #000;
 
@@ -34,12 +32,12 @@
             margin: 0;
             display: inline;
             line-height: .9;
-  
+            inline-size: 370px;
+            word-break: break-all;
             @media (max-width: 700px) {
                 display: block;
                 line-height: .7;
-                inline-size: 370px;
-                word-break: break-all;
+      
               }
 
         }
@@ -57,6 +55,9 @@
                 right: 655px;
                 top: -21px;
                 left: 287px;
+              }
+              @media (max-width: 700px) {
+                left: 275px;
               }
         }
         p {
@@ -144,6 +145,7 @@
                 }
                 .icon-wrapper {
                     transform: translateX(-12px);
+                    z-index: -1;
                     @media (max-width: 1480px) {
                         margin: 0 auto;
                       }
@@ -211,8 +213,25 @@
         background-color: white;
         border-bottom: 8px solid #000;
         border-right: 8px solid #000;
+        width: 100%;
+        position: relative;
         @media (max-width: 700px) {
             padding: 5px;;
+        }
+        li {
+            font-size: 28px;
+            line-height: 32px;
+            font-family: "TTNormsPro", sans-serif;
+        }
+        .chevron-tools-icon-wrapper {
+            position: absolute;
+            right: 180px;
+            top: 80px;
+            cursor: pointer;
+            .chevron-tools-icon {
+                font-size: 30px;
+            }
+
         }
     }
 }

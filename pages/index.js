@@ -2,11 +2,16 @@
 import React, {useEffect, useState} from 'react';
 import Modal from './components/Modal';
 import TopNav from './components/TopNav';
+import Tools from './components/Tools'
+
 
 export default function Home({weatherData, props}) {
   const [description, setDescription] = useState();
   const [temp, setTemp] = useState();
   const [weatherIcon, setWeatherIcon] = useState();
+  const [allPropData, setAllPropData] = useState();
+  
+  console.log("props on HOME", props);
 
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -19,6 +24,7 @@ export default function Home({weatherData, props}) {
     setDescription(capitalizeFirstLetter(weatherData.weather[0].description));
     setTemp(weatherData.main.temp);
     setWeatherIcon("http://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png");
+    setAllPropData(props)
   });
   
 
@@ -63,20 +69,16 @@ export default function Home({weatherData, props}) {
 
       <div className="home__main">
         <div className="home__main-left">
-            <h4>Odio dignissimos</h4>
-            <p>Full stack developer with a passion for code, problem solving and creative collaboration with an award winning background in filmmaking and advertising.</p>
+            <h4>{props[0].acf.intro.title}</h4>
+            <div dangerouslySetInnerHTML={{ __html: props[0].acf.intro.body}}/>
+                           
         </div>
         <div className="home__main-right">
-            <h4>Dolores et quas molestias</h4>
-            <p>Oorrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-            <h4>Uas molestias</h4>
-            <p>Excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-
+          <Tools/>
         </div>
 
       </div>
-
-      <Modal modalVisible={modalVisible} title="Image Modal" toggleModal={toggleModal}></Modal>
+      <Modal props={allPropData} modalVisible={modalVisible} title="Image" toggleModal={toggleModal}></Modal>
 
     </div>
   )

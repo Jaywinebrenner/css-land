@@ -1,0 +1,11 @@
+// Mixin based z-index management. Use powers of 10 to make the heierarchy obvious
+
+$z-index: (
+  drawer: 1000,
+  modal: 1000,
+
+);
+
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}
