@@ -2,7 +2,8 @@
 import React, {useEffect, useState} from 'react';
 import Modal from './components/Modal';
 import TopNav from './components/TopNav';
-import Tools from './components/Tools'
+import Tools from './components/Tools';
+import Experience from './components/Experience';
 
 
 export default function Home({weatherData, props}) {
@@ -76,8 +77,9 @@ export default function Home({weatherData, props}) {
         <div className="home__main-right">
           <Tools props={props}/>
         </div>
-
       </div>
+
+      <Experience/>
       <Modal props={allPropData} modalVisible={modalVisible} title="Image" toggleModal={toggleModal}></Modal>
 
     </div>
