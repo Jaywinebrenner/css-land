@@ -74,7 +74,7 @@ export default function Home({weatherData, props}) {
                            
         </div>
         <div className="home__main-right">
-          <Tools/>
+          <Tools props={props}/>
         </div>
 
       </div>
