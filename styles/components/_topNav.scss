@@ -7,6 +7,7 @@
         }
     }
     .top-left, .top-middle,  .top-right{
+        // z-index: 10000;
         flex: 0 0 33.333%;
         text-align: center;
         transition: .5s;
@@ -68,13 +69,13 @@
     height: 100%;
     width: 100%;
     padding-top: 50px;
-    // padding-left: 140px;
-    z-index: 1000;
+    z-index: z-index(drawer);
     overflow-y: scroll;
     @media(max-width: 500px) {
         transform: translateX(-120%);
+        top: 0;
+        left: 0;
         padding-top: 80px;
-        padding-left: 5%;
     }
     .nav-drawer__link {
         display: block;

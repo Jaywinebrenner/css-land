@@ -2,8 +2,9 @@
 
 import React, {useRef, useEffect} from 'react'
 
-const Modal = ({ modalVisible, toggleModal, title }) => {
+const Modal = ({ modalVisible, toggleModal, title, props }) => {
     const ref = useRef();
+
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
@@ -30,7 +31,17 @@ const Modal = ({ modalVisible, toggleModal, title }) => {
         <div ref={ref} className="modal" >
           <main  className="modal_content">
               <div onClick={()=> toggleModal()} className="x">x</div>
-              <img src="jay.jpeg"/>
+
+                {title === "Image" && props ? <img src="jay.jpeg"/> : null}
+                {title === "Education" && props ? 
+                  <div className="education-modal">
+                      <h3>EDUCATION</h3>
+                      <h1>{props && props[0].acf.education.title}</h1>
+                      <div dangerouslySetInnerHTML={{ __html: props[0].acf.education.body}}/>
+                  </div>
+                  
+                : null
+                  }
           </main>
   
           

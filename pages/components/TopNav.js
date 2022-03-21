@@ -2,8 +2,12 @@
 import React, {useEffect, useState} from 'react';
 import Link from 'next/link';
 import NavigationDrawer from './NavigationDrawer';
+import Modal from './Modal';
 
 const TopNav = ({props}) => {
+
+  const [eduModalVisible, setEduModalVisible] = useState(false);
+  const toggleEduModal = () => setEduModalVisible(!eduModalVisible);
 
   const [drawerIsOpening, setDrawerIsOpening] = useState(false);
   const [drawerIsClosing, setDrawerIsClosing] = useState(false);
@@ -63,9 +67,7 @@ const TopNav = ({props}) => {
         </Link>
         </div>
 
-        <div onClick={() => handleDrawerOpen()}
-             onMouseEnter={() => handleOnMouseEnter("Education")}
-             onMouseLeave={() => handleOnMouseLeave("Education")} className='top-middle'>
+        <div className='top-middle' onClick={()=> toggleEduModal()}>
             <h3>EDUCATION</h3>
         </div>
       
@@ -83,6 +85,7 @@ const TopNav = ({props}) => {
             handleCloseDrawerViaX={handleCloseDrawerViaX}
             props={props}
           />
+            <Modal props={props} modalVisible={eduModalVisible} title="Education" toggleModal={toggleEduModal}></Modal>
     </div>
 
 
