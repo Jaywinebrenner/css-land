@@ -27,9 +27,9 @@ export default function ProjectSlider({props}) {
             <Slider {...settings}>
                 {
                     props &&
-                    props[0].acf.slider.map((s) => {
+                    props[0].acf.slider.map((s, i) => {
                         return (
-                            <div className="slider__slide">
+                            <div key={`slider-key=${i}`} className="slider__slide">
                                 <img src={s.image.url}/>
                                 <div className="slider__text-wrapper">
                                 <Link href={s.url}>

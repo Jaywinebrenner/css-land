@@ -9,8 +9,8 @@ const Tools = ({props}) => {
       return (
         <>
           {currentItems &&
-            currentItems.map((item) => (
-              <div>
+            currentItems.map((item, i) => (
+              <div key={`slider-key=${i}`} >
                 <p>{item}</p>
               </div>
             ))}
@@ -62,7 +62,7 @@ const Tools = ({props}) => {
       <>
         <h4>TOOLS</h4>
 
-        <PaginatedItems itemsPerPage={5} />
+        <PaginatedItems itemsPerPage={9} />
     </>
 
   );

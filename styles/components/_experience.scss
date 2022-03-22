@@ -1,0 +1,56 @@
+.experience {
+    border: 8px solid #000;
+    &__top {
+        display: flex;
+        &-left {
+            flex: 0 0 85%;
+            h1 {
+                font-size: 160px;
+            }
+            h2 {
+                font-size: 90px;
+                line-height: 0.9;
+                inline-size: 370px;
+                word-break: break-all;
+            }
+            h1, h2 {
+                display: inline;
+            }
+    
+        }
+        &-right {
+            flex: 0 0 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            cursor: pointer;
+            border-left: 8px solid #000;
+       
+            .arrow {
+                color: white;
+                font-size: 60px;
+                &:hover{
+                    color: black;
+                }
+            }
+            h3 {
+                color: white;
+                cursor: pointer;
+            }
+            &:hover {
+                transition: .3s;
+                background-color: white;
+            }
+            &:hover .arrow {
+               color: black;
+            }
+    
+        }
+
+    }
+}
+
+// .experience__top-right:hover  .arrow {
+//     color: red;
+// }

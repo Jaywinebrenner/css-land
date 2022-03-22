@@ -215,6 +215,7 @@
         border-right: 8px solid #000;
         width: 100%;
         position: relative;
+        height: 60vh;
         @media (max-width: 700px) {
             padding: 5px;;
         }
@@ -227,6 +228,10 @@
             @media (max-width: 600px) {
                 top: 47px;
                 left: 114px;
+              }
+              @media (max-width: 700px) {
+                top: -6px;
+                left: 129px;
               }
             .selected {
                 opacity: .4;
@@ -258,28 +263,6 @@
             .chevron-tools-icon {
                 font-size: 30px;
             }
-
-        }
-    }
-
-    .experience {
-        &__top-left {
-            h1 {
-                font-size: 160px;
-            }
-            h2 {
-                font-size: 90px;
-                line-height: 0.9;
-                inline-size: 370px;
-                word-break: break-all;
-            }
-            h1, h2 {
-                display: inline;
-            }
-
-        }
-        &__top-right {
-            background-color: black;
 
         }
     }

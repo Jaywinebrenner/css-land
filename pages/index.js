@@ -3,7 +3,6 @@ import React, {useEffect, useState} from 'react';
 import Modal from './components/Modal';
 import TopNav from './components/TopNav';
 import Tools from './components/Tools';
-import Experience from './components/Experience';
 
 
 export default function Home({weatherData, props}) {
@@ -36,7 +35,6 @@ export default function Home({weatherData, props}) {
       <div className="home__hero">
         <div className="home__hero-left">
           <div className="home__hero-left-top">
-              {/* <h1>JAY</h1><h2>WINEBR</h2><h2>ENNER</h2> */}
               <h1>JAY</h1><h2>WINEBRENNER</h2>
               <div onClick={()=> toggleModal()} className="img-link-wrapper">
                 <p>&lt;img/&gt;</p>
@@ -47,7 +45,7 @@ export default function Home({weatherData, props}) {
      
           <div className="home__hero-left-bottom--one">
             <div >
-                  <h3>THIS SITE USES WORDPRESS AS HEADLESS CMS WITH NEXT.JS</h3>
+                  <h3>THIS SITE USES WORDPRESS AS A HEADLESS CMS WITH NEXT.JS</h3>
               </div>
               <div className="home__hero-left-bottom--two">
                 <div className="weather-wrapper">
@@ -78,8 +76,6 @@ export default function Home({weatherData, props}) {
           <Tools props={props}/>
         </div>
       </div>
-
-      <Experience/>
       <Modal props={allPropData} modalVisible={modalVisible} title="Image" toggleModal={toggleModal}></Modal>
 
     </div>
