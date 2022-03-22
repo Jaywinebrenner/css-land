@@ -62,8 +62,8 @@ const TopNav = ({props}) => {
   return (
     <div className='top'>
         <div className='top-left'>
-        <Link href="/contextLand">
-            <h3>EMPTY</h3>
+        <Link href="/experience">
+            <h3>EXPERIENCE</h3>
         </Link>
         </div>
 
