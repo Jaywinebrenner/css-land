@@ -18,7 +18,7 @@ const Experience = () => {
             </div>
             <div className="experience__top-right">
               <Link href="/">
-              <FontAwesomeIcon className="arrow" icon={faArrowLeft} />
+                <FontAwesomeIcon className="arrow" icon={faArrowLeft} />
               </Link>
                 
             </div>

@@ -1,0 +1,41 @@
+
+.draw {
+    border: 8px solid #000;
+    &__top {
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h1 {
+            color: white;
+            margin: 0;
+            font-size: 70px;
+            padding-right: 20px;
+        }
+        .draw-arrow {
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+            padding-left: 20px;
+        }
+
+    }
+    button {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        position: absolute;
+        top: 147px;
+        left: 50px;
+        cursor: pointer;
+        @media (max-width: 1200px) {
+            top: 207px;
+          }
+          @media (max-width: 740px) {
+            top: 282px;
+          }
+    }
+    button:hover {
+        opacity: .3;
+    }
+}

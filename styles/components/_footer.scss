@@ -1,0 +1,26 @@
+
+.footer {
+
+    border-left: 8px solid #000;
+    border-right: 8px solid #000;
+    border-bottom: 8px solid #000;
+    p {
+        margin: 0;
+    }
+    &__top {
+        border-bottom: 8px solid #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .social {
+            padding: 0 20px;
+        }
+        .social:hover {
+            opacity: .3;
+        }
+    }
+    &__bottom {
+        background-color: black;
+        height: 200px;
+    }
+}

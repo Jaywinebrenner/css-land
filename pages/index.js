@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import Modal from './components/Modal';
 import TopNav from './components/TopNav';
 import Tools from './components/Tools';
+import Footer from './components/Footer'
 
 
 export default function Home({weatherData, props}) {
@@ -77,7 +78,7 @@ export default function Home({weatherData, props}) {
         </div>
       </div>
       <Modal props={allPropData} modalVisible={modalVisible} title="Image" toggleModal={toggleModal}></Modal>
-
+      <Footer/>
     </div>
   )
 }
