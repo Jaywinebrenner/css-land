@@ -2,7 +2,6 @@
 import React, {useState, useRef, useEffect} from 'react';
 import Link from 'next/link';
 import { faArrowLeft, faTrashCan } from '@fortawesome/free-solid-svg-icons';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
@@ -85,8 +84,8 @@ const Draw = () => {
        {!isMobile ? <div className="draw">
             <div className="draw__top">
                 <Link href="/">
-                <FontAwesomeIcon className="draw-arrow" icon={faArrowLeft} />
-              </Link>
+                    <FontAwesomeIcon className="draw-arrow" icon={faArrowLeft} />
+                </Link>
                 <h1>DRAW SOMETHING IF YOU LIKE</h1>
             </div>
             {/* <button onClick={startOver}>Erase Your Masterpiece</button> */}

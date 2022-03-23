@@ -1,9 +1,8 @@
 
 import "../styles/app.scss";
-import { LoadingProvider } from "./context/LoadingContext";
+import Router from 'next/router';
 import 'nprogress/nprogress.css';
 import NProgress from 'nprogress';
-import Router from 'next/router';
 
 function MyApp({ Component, pageProps }) {
 
@@ -17,9 +16,9 @@ Router.events.on("routeChangeError", () =>
   NProgress.done()
 );
   return (  
-    <LoadingProvider>
+
         <Component {...pageProps} />
-    </LoadingProvider>
+
   )
 }
 

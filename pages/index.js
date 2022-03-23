@@ -66,7 +66,8 @@ export default function Home({weatherData, props}) {
 
         </div>
         <div className="home__hero-right">
-            <h3>LOREM IPSOM IG NAS TOFURM</h3>
+            <h3>FEEL FREE TO REACH OUT ABOUT ANYTHING</h3>
+            <p>jaywinebrenner@gmail.com</p>
         </div>
       </div>
 

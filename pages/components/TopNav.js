@@ -3,11 +3,10 @@ import React, {useEffect, useState} from 'react';
 import Link from 'next/link';
 import NavigationDrawer from './NavigationDrawer';
 import Modal from './Modal';
-import { useLoading } from "../context/LoadingContext";
+
 
 const TopNav = ({props}) => {
-  const { loading, setLoading } = useLoading();
-  console.log("Loading", loading);
+
 
   const [eduModalVisible, setEduModalVisible] = useState(false);
   const toggleEduModal = () => setEduModalVisible(!eduModalVisible);
