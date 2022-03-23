@@ -13,8 +13,9 @@ const Experience = () => {
         <div className="experience">
           <div className="experience__top">
             <div className="experience__top-left">
-                <h1>DEV</h1>
-                <h2>ELOPMENT EXPERIENCE</h2>
+                <h1>DEVELOPMENT</h1>
+                {/* <br/> */}
+                <h2>EXPERIENCE</h2>
             </div>
             <div className="experience__top-right">
               <Link href="/">

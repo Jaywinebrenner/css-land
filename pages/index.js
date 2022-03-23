@@ -20,13 +20,16 @@ export default function Home({weatherData, props}) {
   
   const [modalVisible, setModalVisible] = useState(false);
   const toggleModal = () => setModalVisible(!modalVisible);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setDescription(capitalizeFirstLetter(weatherData.weather[0].description));
     setTemp(weatherData.main.temp);
     setWeatherIcon("http://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png");
-    setAllPropData(props)
-  });
+    setAllPropData(props);
+  }, []);
+
+  
   
 
   return (
@@ -78,7 +81,7 @@ export default function Home({weatherData, props}) {
         </div>
       </div>
       <Modal props={allPropData} modalVisible={modalVisible} title="Image" toggleModal={toggleModal}></Modal>
-      <Footer/>
+      <Footer />
     </div>
   )
 }
