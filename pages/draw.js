@@ -1,7 +1,8 @@
 
 import React, {useState, useRef, useEffect} from 'react';
 import Link from 'next/link';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
@@ -9,9 +10,13 @@ const Draw = () => {
 
     const canvasRef = useRef(null);
     const contextRef = useRef(null);
-    const [isDrawing, setIsDrawing] = useState(false)
+    const [isDrawing, setIsDrawing] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     const start = () => {
+        if(isMobile){
+            return;
+        }
         const canvas = canvasRef.current;
         canvas.width = window.innerWidth * 2;
         canvas.height = window.innerHeight * 2;
@@ -27,8 +32,16 @@ const Draw = () => {
     }
 
     useEffect(() => {
-        start();
-    }, [])
+        window.innerWidth <= 700 ? setIsMobile(true) : null;
+
+        // function checkMobile() {
+        //     setIsMobile(window.innerWidth <= 800);
+        //   }
+        //   checkMobile();
+        //   window.addEventListener('resize', checkMobile);
+          start();
+        //   return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const startDrawing = ({nativeEvent}) => {
         const {offsetX, offsetY} = nativeEvent
@@ -55,25 +68,46 @@ const Draw = () => {
         start();
       }
 
+    // function downloadCanvas() {
+    //     var imageData = canvasRef.toDataURL("image/png");
+    //     let anchorTag = document.createElement("a");
+    //     document.body.appendChild(anchorTag);
+    //     anchorTag.href = imageData;
+    //     anchorTag.download = "imageData";
+    //     anchorTag.click();
+    //     document.body.removeChild(anchorTag);
+    // }
+
   
 
     return (
-        <div className="draw">
+        <>
+       {!isMobile ? <div className="draw">
             <div className="draw__top">
                 <Link href="/">
                 <FontAwesomeIcon className="draw-arrow" icon={faArrowLeft} />
               </Link>
                 <h1>DRAW SOMETHING IF YOU LIKE</h1>
             </div>
-            <button onClick={startOver}>Erase Your Masterpiece</button>
+            {/* <button onClick={startOver}>Erase Your Masterpiece</button> */}
+            <FontAwesomeIcon onClick={startOver} className="draw-trash" icon={faTrashCan} />
+            {/* <button className="download" onClick={downloadCanvas}>Download Your Masterpiece</button> */}
             <canvas
                 onMouseDown={startDrawing}
                 onMouseUp={finishDrawing}
                 onMouseMove={draw}
                 ref={canvasRef}
             />
-            
         </div>
+        : 
+        <div className="use-desktop">
+            <h1>Please use a desktop for this drawing experience.</h1>
+            <Link href="/">
+                <FontAwesomeIcon className="draw-arrow" icon={faArrowLeft} />
+            </Link>
+        </div>    
+    }
+        </>
       )
 }
 
