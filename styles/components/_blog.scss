@@ -25,6 +25,10 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr) 33%;
         grid-gap: 10px;
+        @media (max-width: 800px) {
+            grid-template-columns: 1fr;
+            padding: 50px 10px;
+        }
 
         .post {
             border: 8px solid black;

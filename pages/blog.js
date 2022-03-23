@@ -14,9 +14,9 @@ const Blog = ({posts}) => {
                 <h1>BLOG</h1>
             </div>
             <div className="blog__post-wrapper">
-            {posts.map((p)=> {
+            {posts.map((p, i)=> {
                 return (
-                    <div className="post">
+                    <div key={`post-key=${i}`} className="post">
                         <h1>{p.title.rendered}</h1>
                         <p>{p.content.rendered}</p>
                     </div>
