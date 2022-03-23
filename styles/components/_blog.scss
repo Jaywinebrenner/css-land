@@ -1,0 +1,33 @@
+
+
+.blog {
+    &__top {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        height: 60px;
+        h1 {
+            color: white;
+            margin: 0;
+        }
+        .blog-arrow {
+            font-size: 30px;
+            color: white;
+            position: absolute;
+            left: 20px;
+            cursor: pointer;
+        }
+    }
+    &__post-wrapper {
+        padding: 50px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) 33%;
+        grid-gap: 10px;
+
+        .post {
+            border: 8px solid black;
+        }
+    }
+}
