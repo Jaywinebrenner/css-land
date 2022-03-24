@@ -2,5 +2,6 @@ JAY WINEBRENNER RESUME 3.0
 
 NEXT JS | WORDPRESS HEADLESS CMS
 
-NEXTJS PROJECT: css-land
-
+FRONTEND -- NEXTJS PROJECT: css-land
+BACKEND -- WordPress: jay-winebrenner-resume-3.0
+  http://localhost:8888/jay-winebrenner-resume-3.0/wp-admin
