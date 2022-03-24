@@ -22,10 +22,23 @@
     &__bottom {
         background-color: black;
         height: 200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
         p {
             color: white;
             cursor: pointer;
-            font-size: 40px;
+            font-size: 25px;
+        }
+        &-left {
+          
+        }
+        &-middle {
+            
+        }
+        &-right {
+            
         }
     }
 }
