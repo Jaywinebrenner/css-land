@@ -2,9 +2,9 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 
-const Blog = ({posts, params, page}) => {
-    console.log("posts", posts);
-    console.log("params", params);
+const Blog = ({posts}) => {
+    console.log("posts SINGLE BLOG", posts);
+
     console.log("URL", posts[0]._embedded['wp:featuredmedia'][0].source_url);
     return (
         <div className="blog">
@@ -18,7 +18,7 @@ const Blog = ({posts, params, page}) => {
             <div className="blog__post-wrapper">
             {posts.map((p, i)=> {
                 return (
-                    <div key={`post-key=${i}`} className="post">
+                    <div key={`post-key=${i}`} className="blog__post">
                         <div className="post-title-wrapper">
                            
                             <Link href={`/blog/${p.slug}`}>
@@ -41,19 +41,11 @@ const Blog = ({posts, params, page}) => {
 
 export default Blog;
 
-export async function getServerSideProps(context) {
-
-    // let params = context.query;
-    // context.query.category ? params = context.query.category : '';
+export async function getServerSideProps() {
 
     const res = await fetch('http://localhost:8888/jay-winebrenner-resume-3.0/wp-json/wp/v2/posts?_embed');
     const posts = await res.json();
 
-    // let page = await fetch(`http://localhost:8888/jay-winebrenner-resume-3.0/wp-json/wp/v2/pages?slug=blog`);
-    // page = page[0] ? page[0] : null;
-    // if (!page) {
-    //     context.res.statusCode = 404;
-    // }
   
     return {
       props: {

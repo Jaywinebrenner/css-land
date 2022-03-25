@@ -36,24 +36,26 @@
             grid-template-columns: 1fr;
             padding: 50px 10px;
         }
-
-        .post {
-            border: 8px solid black;
-            .post-image-wrapper {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                overflow: hidden;
-         
-                img {
-                    flex-shrink: 0;
-                   
-                    height: 200px;
-           
-                }
+    }
+    &__post {
+        border: 8px solid black;
+        .post-image-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+     
+            img {
+                flex-shrink: 0;
+               
+                height: 200px;
+       
             }
-            .post-title-wrapper {
-
+        }
+        .post-title-wrapper {
+            text-align: center;
+            &:hover {
+                opacity: .6;
             }
         }
     }
