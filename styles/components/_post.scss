@@ -1,0 +1,35 @@
+
+
+.post {
+    border: 8px black solid;
+    min-height: 100vh;
+    &__top {
+        background-color: black;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        .post-arrow {
+            color: white;
+            font-size: 50px;
+            padding-left: 20px;
+            cursor: pointer;
+        }
+
+    }
+    &__body {
+        text-align: center;
+        padding: 30px 20vw;
+        .title-wrapper {
+            text-align: center;
+            h1 {
+                font-size: 60px;
+                margin: 10px;
+            }
+
+        }
+        img {
+            width: 50%;
+        }
+
+    }
+}

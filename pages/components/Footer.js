@@ -29,17 +29,17 @@ const Footer = () => {
         <div className="footer__bottom">
             <div className="footer__bottom-left">
                 <Link href="/blog">
-                    <p>BLOG</p>
+                    <h3>BLOG</h3>
                 </Link>
             </div>
             <div className="footer__bottom-middle">
                 <Link href="/blog">
-                    <p>MIDDLE</p>
+                    <h3>MIDDLE</h3>
                 </Link>
             </div>
             <div className="footer__bottom-right">
                 <Link href="/blog">
-                    <p>RIGHT</p>
+                    <h3>RIGHT</h3>
                 </Link>
             </div>
         </div>
