@@ -19,8 +19,8 @@ const BlogPost = ({postData}) => {
         <div className="title-wrapper">
           <h1>{postData.title.rendered.toUpperCase()}</h1>
         </div>
-          <img src={postData._embedded['wp:featuredmedia'][0].source_url}/>
-          <p>{postData.content.rendered}</p>
+          <img src={postData.acf.image.url}/>
+          <div dangerouslySetInnerHTML={{ __html: postData.acf.body}}/>
       </div>
       
     </div>
