@@ -1,12 +1,16 @@
 
 
-import React, {useEffect} from 'react';
-import { faSquarePen } from '@fortawesome/free-solid-svg-icons';
+import React, {useEffect, useState} from 'react';
+import { faSquarePen, faTrophy } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
+import Modal from './Modal';
 
-const Footer = () => {
+const Footer = ({props}) => {
+
+    const [modalVisible, setModalVisible] = useState(false);
+    const toggleModal = () => setModalVisible(!modalVisible);
 
     useEffect(() => {
 
@@ -25,6 +29,9 @@ const Footer = () => {
             <Link href="/draw">
                 <a> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faSquarePen} /> </a>
             </Link>
+            
+                <FontAwesomeIcon onClick={()=> toggleModal()} color={"black"} className="trophy" size={"1.5x"}icon={faTrophy} /> 
+            
         </div>
         <div className="footer__bottom">
             <div className="footer__bottom-left">
@@ -32,18 +39,8 @@ const Footer = () => {
                     <h3>BLOG</h3>
                 </Link>
             </div>
-            {/* <div className="footer__bottom-middle">
-                <Link href="/blog">
-                    <h3>MIDDLE</h3>
-                </Link>
-            </div>
-            <div className="footer__bottom-right">
-                <Link href="/blog">
-                    <h3>RIGHT</h3>
-                </Link>
-            </div> */}
         </div>
-
+        <Modal props={props} modalVisible={modalVisible} title="Awards" toggleModal={toggleModal}></Modal>
     </div>
   );
 };

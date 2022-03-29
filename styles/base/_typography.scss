@@ -7,11 +7,13 @@ $mobileSize: 414px;
 $maxScreen: 1366;
 $minScreen: 300;
 
-p, h1, h2, h3, h4, h5, h6 {
+p, h1, h2, h3, h4, h5, h6, li {
   color: black;
   font-family: 'TTNormsPro',sans-serif;
 }
-
+li {
+  font-size: 18px;
+}
 
 
 p {

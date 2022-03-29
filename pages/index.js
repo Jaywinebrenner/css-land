@@ -29,8 +29,6 @@ export default function Home({weatherData, props}) {
     setAllPropData(props);
   }, []);
 
-  
-  
 
   return (
     <div className="home">
@@ -73,16 +71,16 @@ export default function Home({weatherData, props}) {
 
       <div className="home__main">
         <div className="home__main-left">
-            <h4>{props[0].acf.intro.title}</h4>
-            <div dangerouslySetInnerHTML={{ __html: props[0].acf.intro.body}}/>
+            <h4>{props.intro.title}</h4>
+            <div dangerouslySetInnerHTML={{ __html: props.intro.body}}/>
                            
         </div>
         <div className="home__main-right">
           <Tools props={props}/>
         </div>
       </div>
-      <Modal props={allPropData} modalVisible={modalVisible} title="Image" toggleModal={toggleModal}></Modal>
-      <Footer />
+      <Modal props={props} modalVisible={modalVisible} title="Image" toggleModal={toggleModal}></Modal>
+      <Footer props={props} />
     </div>
   )
 }
@@ -95,7 +93,14 @@ export async function getServerSideProps() {
 
 
   const res = await fetch('http://localhost:8888/jay-winebrenner-resume-3.0/wp-json/wp/v2/pages');
-  const props = await res.json()
+  let props = await res.json()
+
+  // This is to ensure we are getting the correct array object from the pages props call
+  props.map((x) => {
+    if(x.slug === "home") {
+      props = x.acf;
+    }
+   })
 
   return {
     props: {

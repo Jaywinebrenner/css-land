@@ -22,7 +22,7 @@ const BlogPost = ({postData}) => {
           <img src={postData.acf.image.url}/>
           <div dangerouslySetInnerHTML={{ __html: postData.acf.body}}/>
       </div>
-      
+    
     </div>
   )
 }

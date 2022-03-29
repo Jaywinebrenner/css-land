@@ -4,6 +4,7 @@ import ReactPaginate from 'react-paginate';
 
 
 const Tools = ({props}) => {
+  console.log("props on Tools", props)
 
     function Items({ currentItems }) {
       return (
@@ -23,7 +24,7 @@ const Tools = ({props}) => {
       const [pageCount, setPageCount] = useState(0);
       const [itemOffset, setItemOffset] = useState(0);
       useEffect( ()  =>  {
-        var allTools = props[0].acf.tool.map(function(item) {
+        var allTools = props.tool.map(function(item) {
             return item['tool'];
           });
         const endOffset = itemOffset + itemsPerPage;
@@ -34,7 +35,7 @@ const Tools = ({props}) => {
     
 
       const handlePageClick = (event) => {
-        const newOffset = (event.selected * itemsPerPage) % props[0].acf.tool.length;
+        const newOffset = (event.selected * itemsPerPage) % props.tool.length;
         console.log(
           `User requested page number ${event.selected}, which is offset ${newOffset}`
         );

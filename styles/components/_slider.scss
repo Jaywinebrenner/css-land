@@ -7,16 +7,27 @@
     justify-content: center;
     flex-direction: column;
     margin-top: 3%;
+    
     @media (max-width: 600px) {
         height: 35rem;
     }
+    &__title-wrapper {
+        transform: translateY(-85px);
+        
+    }
     &__title {
         text-align: center;
-        font-size: 4rem;
+        font-size: 8rem;
         color: white;
         margin: 0;
         text-decoration: underline;
-        padding-bottom: 50px;
+        z-index: 0;
+        @media (max-width: 800px) {
+            font-size: 80px;
+        }
+        @media (max-width: 450px) {
+            font-size: 50px;
+        }
     }
     &__slide {
         display: block;
@@ -35,11 +46,9 @@
             text-decoration: none;
         }
         h2 {
-
             color: white;
             margin-bottom: 8px;
             font-size: 40px;
-      
         }
         h2:hover {
             opacity: .6;
@@ -50,8 +59,6 @@
             color: white;
         }
     }
-
-
 
     .slick-arrow {
         width: 200px;
