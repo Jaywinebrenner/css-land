@@ -32,7 +32,7 @@ const Footer = () => {
                     <h3>BLOG</h3>
                 </Link>
             </div>
-            <div className="footer__bottom-middle">
+            {/* <div className="footer__bottom-middle">
                 <Link href="/blog">
                     <h3>MIDDLE</h3>
                 </Link>
@@ -41,7 +41,7 @@ const Footer = () => {
                 <Link href="/blog">
                     <h3>RIGHT</h3>
                 </Link>
-            </div>
+            </div> */}
         </div>
 
     </div>
