@@ -59,8 +59,59 @@
         }
 
     }
-}
 
-// .experience__top-right:hover  .arrow {
-//     color: red;
-// }
+    &__middle {
+        border-top: 8px solid black;
+        display: grid;
+        grid-template-columns: 1fr 1.6fr;
+    }
+    &__item {
+        padding: 15px;
+    }
+    &__item:nth-child(1) {
+        border-right: 8px black solid;
+        background-color: black;
+        p, h1 {
+            color: white;
+        }
+    }
+    &__item:nth-child(2) {
+        // border-right: 8px black solid;
+    }
+    &__item:nth-child(3) {
+        border-top: 8px black solid;
+        border-right: 8px black solid;
+    }
+    &__item:nth-child(4) {
+        border-top: 8px black solid;
+    }
+
+    &__footer {
+        min-height: 150px;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        h1 {
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        h1:hover {
+            opacity: .6;
+        }
+        .gear {
+            font-size: 20px;
+            color: white;
+            padding-right: 10px;
+        }
+        .gear:hover h1 {
+            opacity: .6;
+        }
+    }
+    &__other-exp-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+}

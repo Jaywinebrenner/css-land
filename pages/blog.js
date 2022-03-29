@@ -9,16 +9,6 @@ const Blog = ({posts, cats, obj }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [activeName, setActiveName] = useState("all");
 
-    console.log("All Posts", posts);
-    // console.log("posts on blog", posts[0]._embedded['wp:term'][0][0].name);
-    console.log("cats", categories);
-    // console.log("cats from API", cats);
-    console.log("obj", obj);
-    // console.log("post cats", postCats)
-    // console.log("sortedCategory", sortedCategory)
-    // console.log("active Index", activeIndex)
-    // console.log("active name", activeName)
-
     const clickCategory = (index, name) => {
         name = name.toLowerCase();
         setActiveIndex(index);
@@ -60,19 +50,18 @@ const Blog = ({posts, cats, obj }) => {
             {
                 obj[activeName].map((p, i) => {
                     return (
-                        <div key={`post-key=${i}`} className="blog__post">
-                        <div className="post-title-wrapper">
-                           
-                            <Link href={`/blog/${p.slug}`}>
-                                <a>
-                                    <h1>{p.title.rendered}</h1>
-                                </a>
-                            </Link>
-                        </div>
-                        <div className="post-image-wrapper">
-                           {<img src={p.acf.image.url}/>}
-                        </div>
-                    </div>
+                        <Link href={`/blog/${p.slug}`}>
+                            <div key={`post-key=${i}`} className="blog__post">
+                                <div className="post-title-wrapper">
+                                    <a>
+                                        <h1>{p.title.rendered}</h1>
+                                    </a>
+                                </div>
+                                <div className="post-image-wrapper">
+                                {<img src={p.acf.image.url}/>}
+                                </div>
+                            </div>
+                        </Link>
                     )
                 })
             }     
@@ -92,6 +81,7 @@ export async function getServerSideProps() {
     //     "dracula": []
     //     "ect...": []
     //  }
+    // in order to filter posts
 
     const obj = {}
     const catRes = await fetch('http://localhost:8888/jay-winebrenner-resume-3.0/wp-json/wp/v2/categories');
@@ -106,6 +96,15 @@ export async function getServerSideProps() {
     const res = await fetch('http://localhost:8888/jay-winebrenner-resume-3.0/wp-json/wp/v2/posts?_embed');
     const posts = await res.json();
 
+    // Push Posts into corresponding Blog Category array: 
+    //  obj = {
+    //     “javascript”: [],
+    //     “ruby”: [],
+    //     "dracula": []
+    //     "ect...": []
+    //  }
+    // in order to filter posts
+
     for (let i = 0; i < posts.length; i++) {
         let postCats = posts[i]._embedded['wp:term'][0];
         for(let j = 0; j < postCats.length; j++) {
@@ -117,6 +116,7 @@ export async function getServerSideProps() {
           }
         }
     }
+    // Put all the posts into the "all" section which was created / didn't come from the BE
     obj["all"] = posts;
 
     return {

@@ -2,9 +2,15 @@
 
 import React, {useRef, useEffect} from 'react'
 
-const Modal = ({ modalVisible, toggleModal, title, props }) => {
+const Modal = ({ modalVisible, toggleModal, title, props, otherExperience }) => {
     const ref = useRef();
 
+    // let audio = new Audio("/christmas.mp3")
+    // const start = () => {
+    //   audio.play()
+    // }
+
+    console.log("PROPS ON MODAL", props)
 
     useEffect(() => {
         const checkIfClickedOutside = e => {
@@ -31,13 +37,37 @@ const Modal = ({ modalVisible, toggleModal, title, props }) => {
         <div ref={ref} className="modal" >
           <main  className="modal_content">
               <div onClick={()=> toggleModal()} className="x">x</div>
+              <div className={`other-experience-wrapper ${title === "Awards" ? "awards-wrapper" : ""}`}>
 
+                 {title === "Awards" && props ? 
+                  props.award.map((e) => {
+                    return (
+                          <div dangerouslySetInnerHTML={{ __html: e.award_info}}/>
+
+                        )
+                      })
+                      
+                      : null}
+
+
+                 {title === "Other Experience" && otherExperience ? 
+                  otherExperience.map((e) => {
+                    return (
+                       <>
+                          <h1>{e.title}</h1>
+                          <div dangerouslySetInnerHTML={{ __html: e.body}}/>
+                        </>
+                        )
+                      })
+                      
+                      : null}
+                    </div>
                 {title === "Image" && props ? <img src="jay.jpeg"/> : null}
                 {title === "Education" && props ? 
                   <div className="education-modal">
                       <h3>EDUCATION</h3>
-                      <h1>{props && props[0].acf.education.title}</h1>
-                      <div dangerouslySetInnerHTML={{ __html: props[0].acf.education.body}}/>
+                      <h1>{props && props.education.title}</h1>
+                      <div dangerouslySetInnerHTML={{ __html: props.education.body}}/>
                   </div>
                   
                 : null

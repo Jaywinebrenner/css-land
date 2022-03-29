@@ -14,9 +14,17 @@
         align-items: center;
         .social {
             padding: 0 20px;
+            &:hover {
+                opacity: .3;
+            }
         }
-        .social:hover {
-            opacity: .3;
+        .trophy {
+            font-size: 27px;
+            padding: 0 20px;
+            cursor: pointer;
+            &:hover {
+                opacity: .3;
+            }
         }
     }
     &__bottom {

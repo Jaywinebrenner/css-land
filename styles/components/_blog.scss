@@ -49,6 +49,10 @@
     }
     &__post {
         border: 8px solid black;
+        padding: 0 5px;
+        position: relative;
+        z-index: 100;
+        cursor: pointer;
         .post-image-wrapper {
             display: flex;
             justify-content: center;
@@ -66,11 +70,20 @@
         .post-title-wrapper {
             text-align: center;
             &:hover {
-                opacity: .6;
+                // opacity: .6;
             }
             a {
                 text-decoration: none;
             }
+            h1:hover {
+                color: white;
+            }
+        }
+        &:hover {
+            background-color: black;
+        }
+        &:hover h1{
+            color: white;
         }
     }
 }

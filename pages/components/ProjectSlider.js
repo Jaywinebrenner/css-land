@@ -17,17 +17,14 @@ export default function ProjectSlider({props}) {
 
     return (
         <div id="projects-id" className="slider">
-            <h1 className="slider__title">PROJECTS</h1>
-            <div className="slider__checkout-inner-circle"></div>
-            <div className="slider__line-one"></div>
-            <div className="slider__line-two"></div>
- 
-
+            <div className="slider__title-wrapper">
+                <h1 className="slider__title">PROJECTS</h1>
+            </div>
 
             <Slider {...settings}>
                 {
                     props &&
-                    props[0].acf.slider.map((s, i) => {
+                    props.slider.map((s, i) => {
                         return (
                             <div key={`slider-key=${i}`} className="slider__slide">
                                 <img src={s.image.url}/>
