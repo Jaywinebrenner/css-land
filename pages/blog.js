@@ -8,7 +8,6 @@ const Blog = ({posts, cats, obj }) => {
     const [categories, setCategories] = useState();
     const [activeIndex, setActiveIndex] = useState(0);
     const [activeName, setActiveName] = useState("all");
-    const [allPosts, setAllPosts] = useState(posts);
 
     console.log("All Posts", posts);
     // console.log("posts on blog", posts[0]._embedded['wp:term'][0][0].name);
@@ -24,14 +23,9 @@ const Blog = ({posts, cats, obj }) => {
         name = name.toLowerCase();
         setActiveIndex(index);
         setActiveName(name);
-        console.log("name", name)
-        let tempPosts = obj[name]
-        setAllPosts(tempPosts)
-        console.log("all POSTS AFTER CLICK", tempPosts)
     }
 
     useEffect(() => {
-        setActiveName("all");
         let catArr = [];
         cats.filter(function(c) {
             return c.slug !== 'uncategorized';
@@ -90,6 +84,14 @@ const Blog = ({posts, cats, obj }) => {
 export default Blog;
 
 export async function getServerSideProps() {
+
+    // Create Data object like the following: 
+    //  obj = {
+    //     “javascript”: [],
+    //     “ruby”: [],
+    //     "dracula": []
+    //     "ect...": []
+    //  }
 
     const obj = {}
     const catRes = await fetch('http://localhost:8888/jay-winebrenner-resume-3.0/wp-json/wp/v2/categories');
