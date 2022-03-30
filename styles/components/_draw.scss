@@ -29,7 +29,7 @@
         width: 130px;
         position: absolute;
         left: 50px;
-        top: 200px;
+        top: 130px;
         background-color: white;
         &__top {
             height: 30px;
@@ -59,9 +59,9 @@
         color: black;
         font-size: 30px;
         cursor: pointer;
-        // position: absolute;
-        // right: 62px;
-        //  top: 139px;
+        &:hover {
+            opacity: .6;
+        }
     }
 
     canvas {

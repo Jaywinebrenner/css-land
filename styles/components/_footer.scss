@@ -3,7 +3,7 @@
 
     border-left: 8px solid #000;
     border-right: 8px solid #000;
-    border-bottom: 8px solid #000;
+  
     p {
         margin: 0;
     }
@@ -54,10 +54,12 @@
         &-left {
           
         }
-        &-middle {
-            
-        }
         &-right {
+           align-self: flex-end;
+            p {
+                color: white;
+                font-size: 12px;
+            }
             
         }
     }

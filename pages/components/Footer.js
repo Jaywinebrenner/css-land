@@ -39,6 +39,9 @@ const Footer = ({props}) => {
                     <h3>BLOG</h3>
                 </Link>
             </div>
+            <div className="footer__bottom-right">
+                <div className="rights-wrapper"><p>© {new Date().getFullYear()} All Rights Reserved</p></div>
+                </div>
         </div>
         <Modal props={props} modalVisible={modalVisible} title="Awards" toggleModal={toggleModal}></Modal>
     </div>
