@@ -36,6 +36,9 @@
             background-color: black;
             cursor: pointer;
             border-left: 8px solid #000;
+            @media (max-width: 800px) {
+                border-left: none;
+            }
        
             .arrow {
                 color: white;
@@ -64,6 +67,9 @@
         border-top: 8px solid black;
         display: grid;
         grid-template-columns: 1fr 1.6fr;
+        @media (max-width: 800px) {
+            grid-template-columns: 1fr;
+        }
     }
     &__item {
         padding: 15px;
@@ -81,6 +87,9 @@
     &__item:nth-child(3) {
         border-top: 8px black solid;
         border-right: 8px black solid;
+        @media (max-width: 800px) {
+            border-right: none;
+        }
     }
     &__item:nth-child(4) {
         border-top: 8px black solid;

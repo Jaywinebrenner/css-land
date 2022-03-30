@@ -23,7 +23,7 @@ const Footer = ({props}) => {
             <Link href="https://www.linkedin.com/in/jaywinebrenner/">
                 <a target="_blank"> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faLinkedin} /> </a>
             </Link>
-            <Link href="https://www.linkedin.com/in/jaywinebrenner/">
+            <Link href="https://github.com/Jaywinebrenner">
                 <a target="_blank"> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faGithubSquare} /> </a>
             </Link>
             <Link href="/draw">

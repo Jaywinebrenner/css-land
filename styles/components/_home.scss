@@ -142,6 +142,9 @@
                 p:first-child{
                     text-decoration: underline;
                     padding-bottom: 10px;
+                    @media (max-width: 1480px) {
+                        padding-bottom: 0px;
+                      }
                 }
                 .icon-wrapper {
                     transform: translateX(-12px);

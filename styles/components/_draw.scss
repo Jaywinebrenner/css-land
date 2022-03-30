@@ -22,36 +22,53 @@
             padding-left: 20px;
         }
     }
-    .draw-trash {
-        font-size: 30px;
-        cursor: pointer;
-        padding: 50px 0 0 50px;
-        &:hover {
-            opacity: .4;
+    
+    .tool-card {
+        border: 8px solid black;
+        height: 200px;
+        width: 130px;
+        position: absolute;
+        left: 50px;
+        top: 200px;
+        background-color: white;
+        &__top {
+            height: 30px;
+            background-color: black;
+            .up-down {
+                color: white;
+                padding-left: 5px;
+            }
+            
+        }
+        &__bottom {
+            display: flex;
+            flex-direction: column;
+            height: 85%;
+            justify-content: space-evenly;
+        }
+        .draw-trash {
+            font-size: 30px;
+            cursor: pointer;
+            &:hover {
+                opacity: .4;
+            }
         }
     }
 
-    // .download{
-    //     background-color: black;
-    //     color: white;
-    //     padding: 10px;
-    //     position: absolute;
-    //     top: 187px;
-    //     left: 50px;
-    //     cursor: pointer;
-    //     @media (max-width: 1200px) {
-    //         top: 247px;
-    //       }
-    //       @media (max-width: 740px) {
-    //         top: 322px;
-    //       }
-    // }
+    .download-arrow {
+        color: black;
+        font-size: 30px;
+        cursor: pointer;
+        // position: absolute;
+        // right: 62px;
+        //  top: 139px;
+    }
+
     canvas {
         width: 100%;
         height: 100%;
     }
 }
-
 .use-desktop {
     margin: auto;
     padding-top: 25%;
