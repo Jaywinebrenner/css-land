@@ -1,9 +1,9 @@
 
 import React, {useState, useRef, useEffect} from 'react';
 import Link from 'next/link';
-import { faArrowLeft, faTrashCan } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import { faArrowLeft, faFileArrowDown, faTrashCan, faUpDownLeftRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Draggable from 'react-draggable';
 
 const Draw = () => {
 
@@ -77,21 +77,39 @@ const Draw = () => {
     //     document.body.removeChild(anchorTag);
     // }
 
+    const downloadImage = () => {
+        const link = document.createElement('a');
+        link.download = 'download.png';
+        document.getElementById('canvas');
+        link.href = canvas.toDataURL();
+        link.click();
+        link.delete;
+    }
+
   
 
     return (
         <>
        {!isMobile ? <div className="draw">
             <div className="draw__top">
-                <Link href="/">
-                    <FontAwesomeIcon className="draw-arrow" icon={faArrowLeft} />
-                </Link>
+                    <Link href="/">
+                        <FontAwesomeIcon className="draw-arrow" icon={faArrowLeft} />
+                    </Link>
                 <h1>DRAW SOMETHING IF YOU LIKE</h1>
             </div>
-            {/* <button onClick={startOver}>Erase Your Masterpiece</button> */}
-            <FontAwesomeIcon onClick={startOver} className="draw-trash" icon={faTrashCan} />
-            {/* <button className="download" onClick={downloadCanvas}>Download Your Masterpiece</button> */}
+            <Draggable>
+                <div className="tool-card">
+                    <div className="tool-card__top">
+                        <FontAwesomeIcon className="up-down" icon={faUpDownLeftRight} />
+                    </div>
+                    <div className="tool-card__bottom">
+                        <FontAwesomeIcon onClick={startOver} className="draw-trash" icon={faTrashCan} />
+                        <FontAwesomeIcon onClick={() => downloadImage()} id="download" className="download-arrow" icon={faFileArrowDown} />
+                    </div>
+                </div>
+            </Draggable>
             <canvas
+                id="canvas"
                 onMouseDown={startDrawing}
                 onMouseUp={finishDrawing}
                 onMouseMove={draw}
