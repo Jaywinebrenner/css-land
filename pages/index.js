@@ -3,7 +3,8 @@ import React, {useEffect, useState} from 'react';
 import Modal from './components/Modal';
 import TopNav from './components/TopNav';
 import Tools from './components/Tools';
-import Footer from './components/Footer'
+import Footer from './components/Footer';
+import { useSpring, animated, flip } from 'react-spring'
 
 
 export default function Home({weatherData, props}) {
@@ -23,21 +24,27 @@ export default function Home({weatherData, props}) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    setDescription(capitalizeFirstLetter(weatherData.weather[0].description));
-    setTemp(weatherData.main.temp);
-    setWeatherIcon("http://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png");
+    weatherData && setDescription(capitalizeFirstLetter(weatherData.weather[0].description));
+    weatherData && setTemp(weatherData.main.temp);
+    weatherData && setWeatherIcon("http://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png");
     setAllPropData(props);
   }, []);
 
 
+  const springProps = useSpring({ 
+    to: {  marginLeft: 0 }, 
+    from: { marginLeft: -1200 },
+    delay: 300,
+    reverse: flip,
+  })
+
   return (
     <div className="home">
       <TopNav props={props}/>
-
       <div className="home__hero">
         <div className="home__hero-left">
           <div className="home__hero-left-top">
-              <h1>JAY</h1><h2>WINEBRENNER</h2>
+          <animated.div style={springProps}><h1>JAY</h1><h2>WINEBRENNER</h2></animated.div>
               <div onClick={()=> toggleModal()} className="img-link-wrapper">
                 <p>&lt;img/&gt;</p>
               </div>
@@ -52,11 +59,11 @@ export default function Home({weatherData, props}) {
               <div className="home__hero-left-bottom--two">
                 <div className="weather-wrapper">
                   <p>Based in <strong>Portland, Oregon</strong></p>
-                   <p>{description}</p>
-                   <p>{temp}° F</p>
-                   <div className="icon-wrapper">
+                   {description && <p>{description}</p>}
+                   {temp && <p>{temp}° F</p>}
+                   {weatherIcon && <div className="icon-wrapper">
                       <img src={weatherIcon}/>
-                   </div>
+                   </div>}
                 </div>
               </div>
             </div>

@@ -2,6 +2,7 @@ import { faArrowLeft, faCropSimple, faEject } from '@fortawesome/free-solid-svg-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { useSpring, animated, flip } from 'react-spring'
 
 const Blog = ({posts, cats, obj }) => {
 
@@ -26,7 +27,12 @@ const Blog = ({posts, cats, obj }) => {
         setCategories(catArr);
       }, []);
 
+      const springProps = useSpring({ 
+        to: {  opacity: 1 }, 
+        from: { opacity: 0 },
+        delay: 300,
 
+      })
 
     return (
         <div className="blog">
@@ -51,7 +57,7 @@ const Blog = ({posts, cats, obj }) => {
                 obj[activeName].map((p, i) => {
                     return (
                         <Link href={`/blog/${p.slug}`}>
-                            <div key={`post-key=${i}`} className="blog__post">
+                            <animated.div style={springProps} key={`post-key=${i}`} className="blog__post">
                                 <div className="post-title-wrapper">
                                     <a>
                                         <h1>{p.title.rendered}</h1>
@@ -60,7 +66,7 @@ const Blog = ({posts, cats, obj }) => {
                                 <div className="post-image-wrapper">
                                 {<img src={p.acf.image.url}/>}
                                 </div>
-                            </div>
+                            </animated.div>
                         </Link>
                     )
                 })
