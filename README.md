@@ -12,3 +12,4 @@ Technlogies:
 Open Weather API,
 WP API
 NextJs
+Vercel - Hosting Frontend NextJs App

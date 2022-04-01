@@ -1,0 +1,75 @@
+.hc-bird {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+
+  .background {
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+  }
+
+  .bird {
+    height: 100px;
+    width: 160px;
+    position: fixed;
+    top: 40vh;
+    left: 140px;
+    z-index: 100;
+    @media (max-width: 900px) {
+      left: 16px;
+    }
+  }
+
+  .pipe_sprite {
+    position: fixed;
+    top: 40vh;
+    left: 100vw;
+    height: 70vh;
+    width: 6vw;
+    background-color: black;
+  }
+
+  .message-wrapper {
+    position: fixed;
+    z-index: 10;
+    top: 200px;
+    left: 140px;
+    text-align: center;
+    mix-blend-mode: difference;
+    padding: 16px;
+    background: white;
+    @media (max-width: 900px) {
+      left: 16px;
+      right: 16px;
+    }
+  }
+
+  .message {
+    font-weight: 500;
+    color: black;
+    display: inline;
+  }
+
+  .score {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    padding: 12px;
+    font-size: 30px;
+    font-weight: 500;
+    color: black;
+    background: white;
+    top: 80px;
+    left: 140px;
+    mix-blend-mode: difference;
+
+    @media (max-width: 900px) {
+      left: 16px;
+    }
+  }
+
+  .score_val {
+    color: black;
+  }
+}
