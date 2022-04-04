@@ -35,9 +35,9 @@ const Experience = ({props}) => {
             </Link>
           </div>
         <div className="experience__middle">
-          {props && props.experience.map((exp)=> {
+          {props && props.experience.map((exp, i)=> {
             return (
-              <div className="experience__item">
+              <div key={`exp-item-key=${i}`} className="experience__item">
                 <h1>{exp.title}</h1>
                 <div dangerouslySetInnerHTML={{ __html: exp.body}}/>
               </div>
