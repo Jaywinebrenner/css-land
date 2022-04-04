@@ -56,7 +56,7 @@ const Blog = ({posts, cats, obj }) => {
             {
                 obj[activeName].map((p, i) => {
                     return (
-                        <Link href={`/blog/${p.slug}`}>
+                        <Link key={`blog-post-key=${i}`} href={`/blog/${p.slug}`}>
                             <animated.div style={springProps} key={`post-key=${i}`} className="blog__post">
                                 <div className="post-title-wrapper">
                                     <a>
