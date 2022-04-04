@@ -2,19 +2,27 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { useSpring, animated } from 'react-spring';
 
 const BlogPost = ({postData}) => {
 
   console.log("postData", postData);
 
+  const springProps = useSpring({ 
+    to: {  transform: "translateY(0%)" }, 
+    from: { transform: "translateY(140%)"  },
+    delay: 100,
+  })
+
   return (
+    
     <div className="post">
       <div className="post__top">
         <Link href="/blog">
             <FontAwesomeIcon className="post-arrow" icon={faArrowLeft} />
         </Link>
       </div>
+      <animated.div style={springProps}>
       <div className="post__body">
         <div className="title-wrapper">
           <h1>{postData.title.rendered.toUpperCase()}</h1>
@@ -22,6 +30,7 @@ const BlogPost = ({postData}) => {
           <img src={postData.acf.image.url}/>
           <div dangerouslySetInnerHTML={{ __html: postData.acf.body}}/>
       </div>
+    </animated.div>
     
     </div>
   )

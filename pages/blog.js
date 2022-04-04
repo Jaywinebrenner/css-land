@@ -2,7 +2,7 @@ import { faArrowLeft, faCropSimple, faEject } from '@fortawesome/free-solid-svg-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { useSpring, animated, flip } from 'react-spring'
+import { useSpring, animated } from 'react-spring';
 
 const Blog = ({posts, cats, obj }) => {
 

@@ -32,8 +32,8 @@ export default function Home({weatherData, props}) {
 
 
   const springProps = useSpring({ 
-    to: {  marginLeft: 0 }, 
-    from: { marginLeft: -1200 },
+    to: {  marginLeft: 0, }, 
+    from: { marginLeft: -1200,  },
     delay: 300,
     reverse: flip,
   })
@@ -99,7 +99,7 @@ export async function getServerSideProps() {
   let weatherData = await weatherRes.json();
 
 
-  const res = await fetch('http://localhost:8888/jay-winebrenner-resume-3.0/wp-json/wp/v2/pages');
+  const res = await fetch(`${process.env.API_BASE}`);
   let props = await res.json()
 
   // This is to ensure we are getting the correct array object from the pages props call
