@@ -40,9 +40,9 @@ const Modal = ({ modalVisible, toggleModal, title, props, otherExperience }) => 
               <div className={`other-experience-wrapper ${title === "Awards" ? "awards-wrapper" : ""}`}>
 
                  {title === "Awards" && props ? 
-                  props.award.map((e) => {
+                  props.award.map((e, i) => {
                     return (
-                          <div dangerouslySetInnerHTML={{ __html: e.award_info}}/>
+                          <div key={`award-info-key=${i}`} dangerouslySetInnerHTML={{ __html: e.award_info}}/>
 
                         )
                       })
@@ -51,12 +51,12 @@ const Modal = ({ modalVisible, toggleModal, title, props, otherExperience }) => 
 
 
                  {title === "Other Experience" && otherExperience ? 
-                  otherExperience.map((e) => {
+                  otherExperience.map((e, i) => {
                     return (
-                       <>
+                       <div key={`other-exp-key=${i}`} >
                           <h1>{e.title}</h1>
                           <div dangerouslySetInnerHTML={{ __html: e.body}}/>
-                        </>
+                        </div>
                         )
                       })
                       
