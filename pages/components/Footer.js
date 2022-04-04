@@ -30,7 +30,7 @@ const Footer = ({props}) => {
                 <a> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faSquarePen} /> </a>
             </Link>
         
-            <FontAwesomeIcon onClick={()=> toggleModal()} color={"black"} className="trophy" size={"1.5x"}icon={faTrophy} /> 
+            <FontAwesomeIcon onClick={()=> toggleModal()} color={"black"} className="trophy" icon={faTrophy} /> 
             {/* <Link href="/bird">
                 <a> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faFish} /> </a>
             </Link> */}
