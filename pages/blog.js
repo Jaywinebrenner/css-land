@@ -1,4 +1,4 @@
-import { faArrowLeft, faCropSimple, faEject } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
@@ -91,6 +91,7 @@ export async function getServerSideProps() {
 
     const obj = {}
     const catRes = await fetch('http://localhost:8888/jay-winebrenner-resume-3.0/wp-json/wp/v2/categories');
+
     const cats = await catRes.json();
 
     for (let i = 0; i < cats.length; i++) {
