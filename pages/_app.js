@@ -3,6 +3,7 @@ import "../styles/app.scss";
 import Router from 'next/router';
 import 'nprogress/nprogress.css';
 import NProgress from 'nprogress';
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
 
@@ -16,8 +17,12 @@ Router.events.on("routeChangeError", () =>
   NProgress.done()
 );
   return (  
-
-        <Component {...pageProps} />
+    <>
+      {/* <Head>
+      <link src="favicon.ico" />
+      </Head> */}
+      <Component {...pageProps} />
+    </>
 
   )
 }

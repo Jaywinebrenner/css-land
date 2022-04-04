@@ -19,11 +19,17 @@
     &__body {
         text-align: center;
         padding: 30px 20vw;
+        @media (max-width: 800px) {
+            padding: 5px;
+        }
         .title-wrapper {
             text-align: center;
             h1 {
                 font-size: 60px;
                 margin: 10px;
+                @media (max-width: 800px) {
+                    font-size: 50px;
+                }
             }
 
         }
