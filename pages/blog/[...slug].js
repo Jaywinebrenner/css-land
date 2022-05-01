@@ -37,7 +37,7 @@ const BlogPost = ({postData}) => {
 }
 
 export async function getServerSideProps({ params }) {
-  const res = await fetch('http://localhost:8888/jay-winebrenner-resume-3.0/wp-json/wp/v2/posts?_embed');
+  const res = await fetch('https://jaytown.tannereustice.com/wp-json/wp/v2/posts?_embed');
   const posts = await res.json();
 
   let postData = []
