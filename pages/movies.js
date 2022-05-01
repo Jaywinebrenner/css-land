@@ -41,7 +41,9 @@ const Movies = () => {
   }
 
   useEffect( async() => {
-    const res = await fetch(`http://localhost:8888/jay-winebrenner-resume-3.0/wp-json/wp/v2/`)
+    const res = await fetch(`https://jaytown.tannereustice.com/wp-json/wp/v2//wp-json/wp/v2/`)
+
+    
     let data = await res.json();
 
     console.log("data", data)
