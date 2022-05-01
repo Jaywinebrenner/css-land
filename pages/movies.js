@@ -17,7 +17,7 @@ const Movies = () => {
     console.log("MOVIE AFTER SUBMISSIOn", movie)
     e.preventDefault();
     try {
-      const response = await fetch(`http://www.omdbapi.com/?t=${movie}&apikey=d54828b2`);
+      const response = await fetch(`https://www.omdbapi.com/?t=${movie}&apikey=d54828b2`);
       const data = await response.json()
       if(data.Error) {
         setWarningOpen(true);
