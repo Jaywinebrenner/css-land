@@ -1,0 +1,178 @@
+
+
+.movies {
+    min-height: 100vh;
+    border: 8px solid black;
+    h1 {
+        text-align: center;
+    }
+    h3 {
+        font-size: 50px;
+         font-weight: 600;
+    }
+    &__top {
+        border-bottom: 8px solid black;
+        display: flex;
+        position: relative;
+        z-index: 100;
+        @media (max-width: 1000px) {
+            display: block;
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+            font-size: 5rem;
+            margin: 0;
+            margin-left: 50px;     
+            @media (max-width: 1000px) {
+                margin-left: 0;   
+            }  
+    
+        }
+        .arrow-wrapper {
+            background-color: black;
+            color: white;
+            flex: 0 0 100px;
+            text-align: center;
+            cursor: pointer;
+            border-right: 8px black solid;
+            font-size: 50px;
+            padding-top: 17px;
+            @media (max-width: 1000px) {
+                border-right: none;
+            }
+        }
+        .arrow-wrapper:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+    &__body {
+        form {
+            text-align: center;
+            transform: translateY(-5px);
+            display: flex;
+            @media (max-width: 1000px) {
+                display: block;
+                transform: none;
+            }
+            .enter {
+                border: 0;
+                outline: 0;
+                border-bottom: solid black 8px;
+                flex: 0 0 80vw;
+                font-size: 40px;
+                height: 83px;
+                @media (max-width: 1000px) {
+                    border-bottom: none;
+                    width: 100%;
+                }
+            }
+            .submit-button {
+                color: white;
+                background-color: black;
+                height: 83px;
+                flex: 0 0 19.4vw;
+                border-right: solid black 8px;
+                border-bottom: solid black 8px;
+                border-left: solid black 8px;
+                cursor: pointer;
+                font-size: 25px;
+                @media (max-width: 1000px) {
+                    width: 100%;
+                }
+            }
+            .submit-button:hover {
+                color: black;
+                background-color: white;
+
+            }
+        }
+    }
+
+    .movie {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 50px;
+        @media (max-width: 1000px) {
+            display: block;
+            padding: 5px;
+        }
+        &__left {
+            padding: 0 50px;
+            min-width: 70%;
+            @media (max-width: 1000px) {  
+                padding: 0 5px;
+            }
+        }
+        &__right {
+            max-width: 280px;
+            @media (max-width: 1000px) {  
+                max-width:none;
+            }
+            img {
+                @media (max-width: 1000px) {  
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .loader {
+        text-align: center;
+        margin-top: 10%;
+    }
+    .warning {
+        background-color: rgb(204, 26, 26);
+        max-height: 400px;
+        max-width: 500px;
+        margin: auto;
+        position: absolute;
+        top: 70px; 
+        left: 0; 
+        bottom: 0; 
+        right: 0;
+        border: 8px black solid;
+        text-align: center;
+        z-index: 100;
+        @media (max-width: 1000px) {  
+            top: 0;
+            max-width: none;
+            max-height: none;
+            width: 100vw;
+            height: 100vh;
+        }
+        h5 {
+            text-transform: uppercase;
+            font-size: 60px;
+            margin: 80px 0;
+            color: white;
+        }
+
+        // visibility: hidden;
+        h1 {
+            color: white;
+        }
+        .x-wrapper {
+            position: absolute;
+            top: -8px;
+            right: 25px;
+            cursor: pointer;
+        }
+    }
+    .fade-warning {
+        visibility: visible;
+        animation:fadein .9s;
+    }
+    @keyframes fadein {
+        from {
+            opacity:0;
+        }
+        to {
+            opacity:1;
+        }
+    }
+    .movie-wrapper {
+        // height: 100vh;
+        // background-color: black;
+    }
+}

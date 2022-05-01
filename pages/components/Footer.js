@@ -1,7 +1,7 @@
 
 
 import React, {useEffect, useState} from 'react';
-import { faSquarePen, faTrophy, faFish } from '@fortawesome/free-solid-svg-icons';
+import { faSquarePen, faTrophy, faVideoCamera } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
@@ -29,10 +29,13 @@ const Footer = ({props}) => {
             <Link href="/draw">
                 <a> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faSquarePen} /> </a>
             </Link>
+            <Link href="/movies">
+                <a> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faVideoCamera} /> </a>
+            </Link> 
         
             <FontAwesomeIcon onClick={()=> toggleModal()} color={"black"} className="trophy" icon={faTrophy} /> 
             {/* <Link href="/bird">
-                <a> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faFish} /> </a>
+                <a> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faVideoCamera} /> </a>
             </Link> */}
             
         </div>

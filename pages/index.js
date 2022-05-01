@@ -15,6 +15,7 @@ export default function Home({weatherData, props}) {
   
   console.log("props on HOME", props);
 
+
   function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
@@ -55,6 +56,7 @@ export default function Home({weatherData, props}) {
           <div className="home__hero-left-bottom--one">
             <div >
                   <h3>THIS SITE USES WORDPRESS AS A HEADLESS CMS WITH NEXT.JS</h3>
+                  <p>*The frontend was deployed on Vercel. The Backend was deployed on Digital Ocean</p>
               </div>
               <div className="home__hero-left-bottom--two">
                 <div className="weather-wrapper">
@@ -95,11 +97,18 @@ export default function Home({weatherData, props}) {
 
 export async function getServerSideProps() {
 
+  // LOCAL BE
+  // API_BASE=http://localhost:8888/jay-winebrenner-resume-3.0/wp-json/wp/v2/pages
+
+
   const weatherRes = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Portland&units=imperial&APPID=${process.env.WEATHER_API}`)
   let weatherData = await weatherRes.json();
 
+  // const marsRes = await fetch(`https://api.nasa.gov/insight_weather/?api_key=${process.env.MARS_API}&feedtype=json&ver=1.0`)
+  // let marsData = await marsRes.json();
 
-  const res = await fetch(`${process.env.API_BASE}`);
+
+  const res = await fetch(`${process.env.API_BASE_JAYTOWN_TANNER_EUSTICE_DOT_COM}`);
   let props = await res.json()
 
   // This is to ensure we are getting the correct array object from the pages props call
