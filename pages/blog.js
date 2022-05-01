@@ -90,8 +90,7 @@ export async function getServerSideProps() {
     // in order to filter posts
 
     const obj = {}
-    const catRes = await fetch('http://localhost:8888/jay-winebrenner-resume-3.0/wp-json/wp/v2/categories');
-
+    const catRes = await fetch('https://jaytown.tannereustice.com/wp-json/wp/v2/categories');
     const cats = await catRes.json();
 
     for (let i = 0; i < cats.length; i++) {
@@ -100,7 +99,7 @@ export async function getServerSideProps() {
     }
     obj['all'] = [];
 
-    const res = await fetch('http://localhost:8888/jay-winebrenner-resume-3.0/wp-json/wp/v2/posts?_embed');
+    const res = await fetch('https://jaytown.tannereustice.com/wp-json/wp/v2/posts?_embed');
     const posts = await res.json();
 
     // Push Posts into corresponding Blog Category array: 
