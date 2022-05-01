@@ -63,7 +63,7 @@ export default Experience;
 
 export async function getServerSideProps() {
 
-  const res = await fetch('http://localhost:8888/jay-winebrenner-resume-3.0/wp-json/wp/v2/pages');
+  const res = await fetch(`${process.env.API_BASE_JAYTOWN_TANNER_EUSTICE_DOT_COM}`);
   let props = await res.json();
 
   props.map((x) => {
