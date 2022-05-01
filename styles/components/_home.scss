@@ -14,6 +14,7 @@
         h3 {
             padding-left: 20px;
         }
+
     }
     &__hero-left-top {
         // z-index: 1;
@@ -95,7 +96,16 @@
             @media (max-width: 1480px) {
                 border-bottom: 8px solid #000;
                 display: block;
+                // padding-right: 20px;
               }
+              h3 {
+                  margin-bottom: 0;
+              }
+              p {
+                margin: 0 0 5px 20px;
+                font-size: 12px;
+
+            }
 
         }
         &--two {
