@@ -62,19 +62,13 @@
             align-items: center;
             overflow: hidden;    
             padding-bottom: 20px;
-    
             img {
                 flex-shrink: 0;
-               
                 height: 200px;
-       
             }
         }
         .post-title-wrapper {
             text-align: center;
-            &:hover {
-                // opacity: .6;
-            }
             a {
                 text-decoration: none;
             }
