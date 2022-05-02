@@ -97,10 +97,6 @@ export default function Home({weatherData, props}) {
 
 export async function getServerSideProps() {
 
-  // LOCAL BE
-  // API_BASE=http://localhost:8888/jay-winebrenner-resume-3.0/wp-json/wp/v2/pages
-
-
   const weatherRes = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=Portland&units=imperial&APPID=${process.env.WEATHER_API}`)
   let weatherData = await weatherRes.json();
 

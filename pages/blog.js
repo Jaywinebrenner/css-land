@@ -90,7 +90,6 @@ export async function getServerSideProps() {
     // in order to filter posts
 
     const obj = {}
-    // const catRes = await fetch('https://jaytown.tannereustice.com/wp-json/wp/v2/categories');
     const catRes = await fetch(`${process.env.API_BASE_JAYTOWN_TANNER_EUSTICE_DOT_COM}categories`);
     const cats = await catRes.json();
 
@@ -99,8 +98,6 @@ export async function getServerSideProps() {
         obj[catName] = [];
     }
     obj['all'] = [];
-
-    // const res = await fetch('https://jaytown.tannereustice.com/wp-json/wp/v2/posts?_embed');
 
     const res = await fetch(`${process.env.API_BASE_JAYTOWN_TANNER_EUSTICE_DOT_COM}posts?_embed`);
     
