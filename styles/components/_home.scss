@@ -243,6 +243,7 @@
         width: 100%;
         position: relative;
         height: 60vh;
+        overflow: scroll;
         @media (max-width: 700px) {
             padding: 5px;;
         }
