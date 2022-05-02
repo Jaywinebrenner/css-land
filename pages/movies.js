@@ -40,13 +40,6 @@ const Movies = () => {
     setWarningOpen(false)
   }
 
-  // useEffect( async() => {
-  //   // const res = await fetch(`https://jaytown.tannereustice.com/wp-json/wp/v2/wp-json/wp/v2/`)
-  //   const res = await fetch(`${process.env.API_BASE_JAYTOWN_TANNER_EUSTICE_DOT_COM}`);
-  //   let data = await res.json();
-  //   console.log("data", data)
-  // }, []);
-
 
   const renderErrorMessage = () => {
     return (

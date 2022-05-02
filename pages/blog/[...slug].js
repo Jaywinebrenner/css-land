@@ -38,7 +38,7 @@ const BlogPost = ({postData}) => {
 
 export async function getServerSideProps({ params }) {
   const res = await fetch(`${process.env.API_BASE_JAYTOWN_TANNER_EUSTICE_DOT_COM}posts?_embed`);
-  // const res = await fetch('https://jaytown.tannereustice.com/wp-json/wp/v2/posts?_embed');
+
   const posts = await res.json();
 
   let postData = []
