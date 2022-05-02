@@ -63,7 +63,7 @@ export default Experience;
 
 export async function getServerSideProps() {
 
-  const res = await fetch(`${process.env.API_BASE_JAYTOWN_TANNER_EUSTICE_DOT_COM}`);
+  const res = await fetch(`${process.env.API_BASE_JAYTOWN_TANNER_EUSTICE_DOT_COM}pages`);
   let props = await res.json();
 
   props.map((x) => {
