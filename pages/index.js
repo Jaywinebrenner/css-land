@@ -108,7 +108,7 @@ export async function getServerSideProps() {
   // let marsData = await marsRes.json();
 
 
-  const res = await fetch(`${process.env.API_BASE_JAYTOWN_TANNER_EUSTICE_DOT_COM}`);
+  const res = await fetch(`${process.env.API_BASE_JAYTOWN_TANNER_EUSTICE_DOT_COM}pages`);
   let props = await res.json()
 
   // This is to ensure we are getting the correct array object from the pages props call
