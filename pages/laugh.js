@@ -1,16 +1,23 @@
 
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import Link from 'next/link';
-import { faFaceLaughSquint, faCircleQuestion, faArrowRotateRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faFaceLaughSquint, faCircleQuestion, faDrum, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 
 const Laugh = () => {
 
     const [currentJoke, setCurrentJoke ] = useState();
-    const [onePartStep, setOnePartStep] = useState(1);
     const [twoPartStep, setTwoPartStep] = useState(1);
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+
+    const audio = useRef(
+        typeof Audio !== "undefined" ? new Audio("../rimshot.mp3") : "undefined"
+      );
+      
+      const start = () => {
+        audio.current?.play();
+      };
+
 
 console.log("joke", currentJoke)
 
@@ -23,13 +30,11 @@ console.log("joke", currentJoke)
         } else {
             getJoke()
         }
-        console.log("joke use", json)
         setCurrentJoke(json);
         setLoading(false)
     }
 
     useEffect(() => {
-      
     }, []);
 
     return (
@@ -43,16 +48,19 @@ console.log("joke", currentJoke)
                 </div>
                 <h1>LAUGH</h1>
             </div>
-            {twoPartStep === 1 &&!loading &&  <div onClick={()=>getJoke()} className='laugh__icon-wrapper'>
+            {loading && <div className='laugh__icon-wrapper'>
+                <img src="/loader.gif"/>
+            </div>}
+            {twoPartStep === 1 && !loading &&  <div onClick={()=>getJoke()} className='laugh__icon-wrapper'>
                 <FontAwesomeIcon color={"black"} className="laugh__icon-wrapper-icon" size={"7x"}icon={faFaceLaughSquint} />
             </div>}
             {currentJoke && currentJoke.type === 'twopart' &&!loading && 
             <>
-            {twoPartStep === 2 && !loading && <div onClick={()=>setTwoPartStep(3)} className='laugh__icon-wrapper'>
+            {twoPartStep === 2 && !loading && <div onClick={() => { setTwoPartStep(3); start();}} className='laugh__icon-wrapper'>
                 <FontAwesomeIcon color={"black"} className="laugh__icon-wrapper-icon" size={"7x"}icon={faCircleQuestion} />
             </div>}
             {twoPartStep === 3 && !loading && <div onClick={()=>getJoke()}  className='laugh__icon-wrapper'>
-                <FontAwesomeIcon color={"black"} className="laugh__icon-wrapper-icon" size={"7x"}icon={faArrowRotateRight} />
+                <FontAwesomeIcon color={"black"} className="laugh__icon-wrapper-icon" size={"7x"}icon={faDrum} />
             </div>}
             {twoPartStep === 2 && !loading && <div className='laugh__setup-wrapper'>
                 <h2>{currentJoke.setup}</h2>
