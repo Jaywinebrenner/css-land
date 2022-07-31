@@ -54,8 +54,15 @@
         &-left {
           
         }
+        &-middle {
+            .rights-wrapper {
+                color: white;
+                opacity: .4;
+            }
+
+        }
         &-right {
-           align-self: flex-end;
+        
             p {
                 color: white;
                 font-size: 12px;

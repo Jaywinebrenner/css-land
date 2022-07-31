@@ -29,9 +29,9 @@ const Footer = ({props}) => {
             <Link href="/draw">
                 <a> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faSquarePen} /> </a>
             </Link>
-            <Link href="/movies">
+            {/* <Link href="/movies">
                 <a> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faVideoCamera} /> </a>
-            </Link> 
+            </Link>  */}
         
             <FontAwesomeIcon onClick={()=> toggleModal()} color={"black"} className="trophy" icon={faTrophy} /> 
             {/* <Link href="/bird">
@@ -45,9 +45,14 @@ const Footer = ({props}) => {
                     <h3>BLOG</h3>
                 </Link>
             </div>
-            <div className="footer__bottom-right">
+            <div className="footer__bottom-middle">
                 <div className="rights-wrapper"><p>© {new Date().getFullYear()} All Rights Reserved</p></div>
-                </div>
+            </div>
+            <div className="footer__bottom-right">
+                <Link href="/bored">
+                    <h3>BORED?</h3>
+                </Link>
+            </div>
         </div>
         <Modal props={props} modalVisible={modalVisible} title="Awards" toggleModal={toggleModal}></Modal>
     </div>

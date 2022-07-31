@@ -92,7 +92,7 @@ const Draw = () => {
         <>
        {!isMobile ? <div className="draw">
             <div className="draw__top">
-                    <Link href="/">
+                    <Link href="/bored">
                         <FontAwesomeIcon className="draw-arrow" icon={faArrowLeft} />
                     </Link>
                 <h1>DRAW SOMETHING IF YOU LIKE</h1>

@@ -1,0 +1,15 @@
+.bored {
+    h1 {
+        font-size: 14rem;
+        margin: 0;
+        cursor: pointer;
+        display: block;
+   
+        @media(max-width: 800px){
+            font-size: 7rem;
+        }
+        &:hover {
+            opacity: .4;
+        }
+    }
+}

@@ -43,7 +43,6 @@ const Movies = () => {
 
   const renderErrorMessage = () => {
     return (
-      // <div className={`warning ${warningOpen ? "fade-warning" : ""}`}>
       <div className="warning">
         <h5>{movie.Error}</h5>
         <div onClick={()=> handleX()} className="x-wrapper">
@@ -56,7 +55,7 @@ const Movies = () => {
   return (
     <div className="movies">
       <div className="movies__top">
-          <Link href="/">
+          <Link href="/bored">
         <div className="arrow-wrapper">
               <FontAwesomeIcon className="draw-arrow" icon={faArrowLeft} />
         </div>

@@ -1,0 +1,67 @@
+
+
+.laugh {
+    &__top {
+        border: 8px solid #000;
+        display: flex;
+        background-color: black;
+        .arrow-wrapper {
+            color: white;
+            flex: 0 0 100px;
+            text-align: center;
+            cursor: pointer;
+            border-right: 8px black solid;
+            font-size: 50px;
+            padding-top: 10px;
+            @media (max-width: 1000px) {
+                border-right: none;
+            }
+            .draw-arrow {
+                font-size: 30px;
+                cursor: pointer;
+            }
+        }
+    }
+    &__angle {
+        transform: .4s;
+        cursor: pointer;
+        &:hover {
+            opacity: .4;
+        }
+    }
+    h1 {
+        font-size: 5rem;
+        text-align: center;
+        margin: auto;
+        color: white;
+    }
+    &__icon-wrapper {
+        text-align: center;
+        padding-top: 15rem;
+        &-icon {
+            cursor: pointer;
+            transform: .4s;
+            &:hover {
+                color: rgb(204, 26, 26);;
+            }
+        }
+    }
+    &__setup-wrapper {
+        text-align: center;
+        margin-top: 20px;
+        &-question {
+
+        }
+    }
+    .question-icon {
+        cursor: pointer;
+        transform: .4s;
+        &:hover {
+            color: rgb(204, 26, 26);;
+        }
+    }
+    &__delivery {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
