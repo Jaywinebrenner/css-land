@@ -41,11 +41,11 @@ console.log("joke", currentJoke)
         
         <div className="laugh">
             <div className='laugh__top'>
-                <div className="arrow-wrapper">
                 <Link href="/bored">
+                <div className="arrow-wrapper">
                     <FontAwesomeIcon className="draw-arrow" icon={faArrowLeft} />
-                </Link>
                 </div>
+                </Link>
                 <h1>LAUGH</h1>
             </div>
             {loading && <div className='laugh__icon-wrapper'>

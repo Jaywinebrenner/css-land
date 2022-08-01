@@ -1,12 +1,21 @@
 .bored {
+    border: 8px solid black;
+    min-height: 100vh;
+    text-align: center;
     h1 {
         font-size: 14rem;
         margin: 0;
         cursor: pointer;
         display: block;
    
-        @media(max-width: 800px){
+        @media(max-width: 900px){
+            font-size: 10rem;
+        }
+        @media(max-width: 650px){
             font-size: 7rem;
+        }
+        @media(max-width: 450px){
+            font-size: 5rem;
         }
         &:hover {
             opacity: .4;

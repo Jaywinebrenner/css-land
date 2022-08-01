@@ -60,12 +60,12 @@ const Movies = () => {
               <FontAwesomeIcon className="draw-arrow" icon={faArrowLeft} />
         </div>
           </Link>
-        <h1>BORED? SEARCH FOR A MOVIE!</h1>
+        <h1>CINEMA</h1>
       </div>
       <div className="movies__body">
         <form onSubmit={handleSubmit}>
           <input value={movieInput} onChange={(e) => handleInputChange(e)} className="enter" type="text" name="name" />
-          <input className="submit-button" type="submit" value="SUBMIT" />
+          <input className="submit-button" type="submit" value="SEARCH" />
         </form>
       </div>
       <div className="movie-wrapper">

@@ -1,8 +1,10 @@
 
 
 .laugh {
+    border: 8px solid #000;
+    height: 100vh;
     &__top {
-        border: 8px solid #000;
+        border-bottom: 8px solid #000;
         display: flex;
         background-color: black;
         .arrow-wrapper {
@@ -13,6 +15,12 @@
             border-right: 8px black solid;
             font-size: 50px;
             padding-top: 10px;
+            &:hover {
+                background-color: white;
+            }
+            &:hover .fa-arrow-left {
+                color: black;
+            }
             @media (max-width: 1000px) {
                 border-right: none;
             }
@@ -34,6 +42,10 @@
         text-align: center;
         margin: auto;
         color: white;
+        padding-right: 7%;
+    }
+    h2 {
+        font-size: 3rem;
     }
     &__icon-wrapper {
         text-align: center;
@@ -49,6 +61,7 @@
     &__setup-wrapper {
         text-align: center;
         margin-top: 20px;
+        padding: 0 10%;
         &-question {
 
         }
@@ -64,4 +77,8 @@
         text-align: center;
         margin-top: 20px;
     }
-}
+}            
+
+// .fa-arrow-left{
+//     color: black;
+// }
