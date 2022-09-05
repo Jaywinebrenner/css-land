@@ -26,9 +26,9 @@ const Footer = ({props}) => {
             <Link href="https://github.com/Jaywinebrenner">
                 <a target="_blank"> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faGithubSquare} /> </a>
             </Link>
-            <Link href="/draw">
+            {/* <Link href="/draw">
                 <a> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faSquarePen} /> </a>
-            </Link>
+            </Link> */}
             {/* <Link href="/movies">
                 <a> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faVideoCamera} /> </a>
             </Link>  */}
