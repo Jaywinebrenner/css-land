@@ -46,7 +46,7 @@ console.log("joke", currentJoke)
                     <FontAwesomeIcon className="draw-arrow" icon={faArrowLeft} />
                 </div>
                 </Link>
-                <h1>LAUGH</h1>
+                <h1>HA HA</h1>
             </div>
             {loading && <div className='laugh__icon-wrapper'>
                 <img src="/loader.gif"/>

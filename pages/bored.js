@@ -18,7 +18,7 @@ const Bored = () => {
                 <h1>DRAW</h1>
             </Link>
             <Link href="/laugh">
-                <h1>LAUGH</h1>
+                <h1>HA HA</h1>
             </Link>
             <Link href="/movies">
                 <h1>CINEMA</h1>
