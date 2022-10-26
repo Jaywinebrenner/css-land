@@ -35,7 +35,7 @@ const Event = ({eventData}) => {
         <div className='event-single__body'>
           <div key={`event-key=${event && event.id}`}>
             <p>{event && event.cost}</p>
-            <img src={event && event.image.url}/>
+            {event && <img src={event.image.url}/>}
           <div dangerouslySetInnerHTML={{ __html: event && event.description}}/></div>
         </div>
       </div>
