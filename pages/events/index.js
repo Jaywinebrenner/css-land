@@ -21,6 +21,7 @@ const Events = ({eventsData}) => {
         eventsData.events.map((e) => {
             return (
               <Link
+                    key={`event-key-link=${e}`}
                     href={{
                       pathname: '/events/[slug]',
                       query: { 
