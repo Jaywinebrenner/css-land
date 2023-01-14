@@ -56,7 +56,7 @@ export default function Home({weatherData, props}) {
           <div className="home__hero-left-bottom--one">
             <div >
                   <h3>THIS SITE USES WORDPRESS AS A HEADLESS CMS WITH NEXT.JS</h3>
-                  <p>*The frontend was deployed on Vercel. The Backend was deployed on Digital Ocean</p>
+                  <p>*The frontend was deployed on Vercel. The Backend was deployed on Digital Ocean.</p>
               </div>
               <div className="home__hero-left-bottom--two">
                 <div className="weather-wrapper">

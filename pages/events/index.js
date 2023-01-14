@@ -1,9 +1,7 @@
 
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import Link from 'next/link';
-import { faArrowLeft, faFileArrowDown, faTrashCan, faUpDownLeftRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from 'next/image'
+
 
 const Events = ({eventsData}) => {
   console.log("events Data", eventsData)
