@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import ReactPaginate from 'react-paginate';
 
 const Tools = ({props}) => {
-  console.log("props on Tools", props && props)
+  // console.log("props on Tools", props && props)
 
     function Items({ currentItems }) {
       return (
