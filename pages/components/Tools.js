@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import ReactPaginate from 'react-paginate';
 
 const Tools = ({props}) => {
-  console.log("props on Tools", props)
+  console.log("props on Tools", props && props)
 
     function Items({ currentItems }) {
       return (
@@ -23,13 +23,13 @@ const Tools = ({props}) => {
       const [pageCount, setPageCount] = useState(0);
       const [itemOffset, setItemOffset] = useState(0);
       useEffect( ()  =>  {
-        var allTools = props.tool.map(function(item) {
+        var allTools = props && props.tool.map(function(item) {
             return item['tool'];
           });
         const endOffset = itemOffset + itemsPerPage;
         console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-        setCurrentItems(allTools.slice(itemOffset, endOffset));
-        setPageCount(Math.ceil(allTools.length / itemsPerPage));
+        setCurrentItems(allTools && allTools.slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(allTools && allTools.length / itemsPerPage));
       }, [itemOffset, itemsPerPage]);
     
 

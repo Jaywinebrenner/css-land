@@ -80,16 +80,16 @@ export default function Home({weatherData, props}) {
 
       <div className="home__main">
         <div className="home__main-left">
-            <h4>{props.intro.title}</h4>
-            <div dangerouslySetInnerHTML={{ __html: props.intro.body}}/>
+            <h4>{props && props.intro.title}</h4>
+            <div dangerouslySetInnerHTML={{ __html: props && props.intro.body}}/>
                            
         </div>
         <div className="home__main-right">
-          <Tools props={props}/>
+          <Tools props={props && props}/>
         </div>
       </div>
       <Modal props={props} modalVisible={modalVisible} title="Image" toggleModal={toggleModal}></Modal>
-      <Footer props={props} />
+      <Footer props={props && props} />
     </div>
   )
 }
@@ -105,19 +105,20 @@ export async function getServerSideProps() {
 
 
   const res = await fetch(`${process.env.API_BASE_JAYTOWN_TANNER_EUSTICE_DOT_COM}pages`);
-  let props = await res.json()
+  let props = await res && res.json()
 
   // This is to ensure we are getting the correct array object from the pages props call
-  props.map((x) => {
-    if(x.slug === "home") {
-      props = x.acf;
-    }
-   })
+  console.log("props", props)
+  // props.map((x) => {
+  //   if(x.slug === "home") {
+  //     props = x.acf;
+  //   }
+  //  })
 
   return {
     props: {
       weatherData, 
-      props
+      // props
     },
   };
 }
