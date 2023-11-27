@@ -109,11 +109,11 @@ export async function getServerSideProps() {
 
   // This is to ensure we are getting the correct array object from the pages props call
   console.log("props", props)
-  // props.map((x) => {
-  //   if(x.slug === "home") {
-  //     props = x.acf;
-  //   }
-  //  })
+  props && props.map((x) => {
+    if(x.slug === "home") {
+      props = x.acf;
+    }
+   })
 
   return {
     props: {
