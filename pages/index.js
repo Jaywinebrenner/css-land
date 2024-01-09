@@ -7,13 +7,13 @@ import Footer from './components/Footer';
 import { useSpring, animated, flip } from 'react-spring'
 
 
-export default function Home({weatherData, props}) {
+export default function Home({weatherData}) {
   const [description, setDescription] = useState();
   const [temp, setTemp] = useState();
   const [weatherIcon, setWeatherIcon] = useState();
-  const [allPropData, setAllPropData] = useState();
+  // const [allPropData, setAllPropData] = useState();
   
-  console.log("props on HOME", props);
+  // console.log("props on HOME", props);
 
 
   function capitalizeFirstLetter(string) {
@@ -28,7 +28,7 @@ export default function Home({weatherData, props}) {
     weatherData && setDescription(capitalizeFirstLetter(weatherData.weather[0].description));
     weatherData && setTemp(weatherData.main.temp);
     weatherData && setWeatherIcon("http://openweathermap.org/img/w/" + weatherData.weather[0].icon + ".png");
-    setAllPropData(props);
+    // setAllPropData(props);
   }, []);
 
 
@@ -41,7 +41,7 @@ export default function Home({weatherData, props}) {
 
   return (
     <div className="home">
-      <TopNav props={props}/>
+      <TopNav/>
       <div className="home__hero">
         <div className="home__hero-left">
           <div className="home__hero-left-top">
@@ -55,8 +55,8 @@ export default function Home({weatherData, props}) {
      
           <div className="home__hero-left-bottom--one">
             <div >
-                  <h3>THIS SITE USES WORDPRESS AS A HEADLESS CMS WITH NEXT.JS</h3>
-                  <p>*The frontend was deployed on Vercel. The Backend was deployed on Digital Ocean.</p>
+                  <h3>THIS SITE WAS BUILT WITH NEXT.JS</h3>
+                  <p>*It was deployed on Vercel.</p>
               </div>
               <div className="home__hero-left-bottom--two">
                 <div className="weather-wrapper">
@@ -80,16 +80,18 @@ export default function Home({weatherData, props}) {
 
       <div className="home__main">
         <div className="home__main-left">
-            <h4>{props && props.intro.title}</h4>
-            <div dangerouslySetInnerHTML={{ __html: props && props.intro.body}}/>
+            {/* <h4>{props && props.intro.title}</h4> */}
+            <h4>HELLO</h4>
+            {/* <div dangerouslySetInnerHTML={{ __html: props && props.intro.body}}/> */}
+            <div><p>I am a passionate code lover and Full Stack Developer with an award winning background in filmmaking and advertising production. I specialize in Next.js / React and Custom WordPress Theme creation for dynamic, beautiful and performant web applications.</p></div>
                            
         </div>
         <div className="home__main-right">
-          <Tools props={props && props}/>
+          <Tools/>
         </div>
       </div>
-      <Modal props={props} modalVisible={modalVisible} title="Image" toggleModal={toggleModal}></Modal>
-      <Footer props={props && props} />
+      <Modal modalVisible={modalVisible} title="Image" toggleModal={toggleModal}></Modal>
+      <Footer/>
     </div>
   )
 }
@@ -104,16 +106,16 @@ export async function getServerSideProps() {
   // let marsData = await marsRes.json();
 
 
-  const res = await fetch(`${process.env.API_BASE_JAYTOWN_TANNER_EUSTICE_DOT_COM}pages`);
-  let props = await res && res.json()
+  // const res = await fetch(`${process.env.API_BASE_JAYTOWN_TANNER_EUSTICE_DOT_COM}pages`);
+  // let props = await res && res.json()
 
   // This is to ensure we are getting the correct array object from the pages props call
-  console.log("props", props)
-  props && props.map((x) => {
-    if(x.slug === "home") {
-      props = x.acf;
-    }
-   })
+  // console.log("props", props)
+  // props && props.map((x) => {
+  //   if(x.slug === "home") {
+  //     props = x.acf;
+  //   }
+  //  })
 
   return {
     props: {

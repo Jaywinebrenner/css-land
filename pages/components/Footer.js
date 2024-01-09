@@ -7,7 +7,7 @@ import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Link from 'next/link';
 import Modal from './Modal';
 
-const Footer = ({props}) => {
+const Footer = () => {
 
     const [modalVisible, setModalVisible] = useState(false);
     const toggleModal = () => setModalVisible(!modalVisible);
@@ -54,7 +54,7 @@ const Footer = ({props}) => {
                 </Link>
             </div>
         </div>
-        <Modal props={props} modalVisible={modalVisible} title="Awards" toggleModal={toggleModal}></Modal>
+        <Modal modalVisible={modalVisible} title="Awards" toggleModal={toggleModal}></Modal>
     </div>
   );
 };

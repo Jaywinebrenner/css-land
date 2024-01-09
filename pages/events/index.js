@@ -1,9 +1,10 @@
 
 import React, {useEffect} from 'react';
 import Link from 'next/link';
+import eventsData from '../../data/eventsData';
 
 
-const Events = ({eventsData}) => {
+const Events = () => {
   console.log("events Data", eventsData)
 
   useEffect(() => {
@@ -49,17 +50,17 @@ export default Events;
 
 
 
-export async function getServerSideProps() {
+// export async function getServerSideProps() {
 
-    // const eventsRes = await fetch(process.env.EVENTS_API)
-    const eventsRes = await fetch('https://jaytown.tannereustice.com/wp-json/tribe/events/v1/events')
-    let eventsData = await eventsRes.json();
+//     // const eventsRes = await fetch(process.env.EVENTS_API)
+//     // const eventsRes = await fetch('https://jaytown.tannereustice.com/wp-json/tribe/events/v1/events')
+//     // let eventsData = await eventsRes.json();
   
   
-    return {
-      props: {
-        eventsData, 
-      },
-    };
-  }
+//     return {
+//       props: {
+//         eventsData, 
+//       },
+//     };
+//   }
   

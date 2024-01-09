@@ -1,0 +1,54 @@
+.carebridge-table {
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+    .large-col {
+        width: 50%;
+        padding-left: 24px;
+    }
+
+    .plan, .silver, .gold, .managed {
+        color: white;
+        padding: 24px;
+    }
+    .center {
+        padding: 24px;
+        text-align: center;
+    }
+    .plan {
+        background-color: #10124C;
+    }
+    .silver {
+        background-color: #6C808A;
+    }
+    .gold {
+        background-color: #5188F4;
+    }
+    .managed {
+        background-color: #1F4897;
+    }
+    .light-blue-row {
+      background-color: #cce5ff; 
+    }
+  
+    table {
+      /* Your table styles go here */
+      width: 100%;
+      border-collapse: collapse;
+    }
+  
+    th, td {
+      /* Your cell styles go here */
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+  
+    th {
+      background-color: #f2f2f2;
+    }
+  }
+  

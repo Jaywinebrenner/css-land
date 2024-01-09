@@ -4,20 +4,23 @@ import Link from 'next/link';
 import { faArrowLeft, faWrench } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Modal from './components/Modal';
+import otherExperienceData from '../data/otherExperienceData';
+import experienceData from '../data/experienceData';
 
-const Experience = ({props}) => {
+const Experience = () => {
 
   const [modalVisible, setModalVisible] = useState(false);
   const [otherExperience, setOtherExperience] = useState();
 
-  console.log("other exp", otherExperience);
+  console.log("experienceData", experienceData);
 
   const toggleModal = () => setModalVisible(!modalVisible);
 
-    console.log("props exp", props);
+  console.log("modal vis?", modalVisible)
+
 
     useEffect(() => {
-      setOtherExperience(props.other_experience)
+      setOtherExperience(otherExperienceData)
       
     }, []);
 
@@ -35,16 +38,24 @@ const Experience = ({props}) => {
             </Link>
           </div>
         <div className="experience__middle">
-          {props && props.experience.map((exp, i)=> {
+          {experienceData && experienceData.map((exp, i)=> {
+            console.log("exp", exp.details)
             return (
               <div key={`exp-item-key=${i}`} className="experience__item">
-                <h1>{exp.title}</h1>
-                <div dangerouslySetInnerHTML={{ __html: exp.body}}/>
+                <a style={{color: i === 0 ? "white" : "black"}} href={exp.link} target="_blank" rel="noopener noreferrer">
+                  {exp.job}
+                </a>
+                <h2 style={{color: i === 0 ? "white" : "black"}}>{exp.year}</h2> 
+                <ul>
+                {exp.details.map((d, j) => (
+                  <li style={{ color: exp.job === 'Hello Cheshire' ? 'white!important' : 'black' }} key={`detail-key=${j}`}>{d}</li>
+                ))}
+                </ul>
               </div>
             )
           })}
-
         </div>
+
         <div className="experience__footer">
           <div onClick={()=> toggleModal()} className="experience__other-exp-wrapper">
            <FontAwesomeIcon className="gear" icon={faWrench} />
@@ -63,19 +74,19 @@ export default Experience;
 
 export async function getServerSideProps() {
 
-  const res = await fetch(`${process.env.API_BASE_JAYTOWN_TANNER_EUSTICE_DOT_COM}pages`);
-  let props = await res.json();
+  // const res = await fetch(`${process.env.API_BASE_JAYTOWN_TANNER_EUSTICE_DOT_COM}pages`);
+  // let props = await res.json();
 
-  props.map((x) => {
-    if(x.slug === "experience") {
-      props = x.acf;
-      props = props;
-    }
-   })
+  // props.map((x) => {
+  //   if(x.slug === "experience") {
+  //     props = x.acf;
+  //     props = props;
+  //   }
+  //  })
 
   return {
     props: {
-      props
+      // props
     },
   };
 }

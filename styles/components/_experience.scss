@@ -66,13 +66,18 @@
     &__middle {
         border-top: 8px solid black;
         display: grid;
-        grid-template-columns: 1fr 1.6fr;
+        grid-template-columns: 1fr 1fr;
         @media (max-width: 800px) {
             grid-template-columns: 1fr;
         }
     }
     &__item {
         padding: 15px;
+        a {
+            font-size: 50px;
+            font-weight: bold;
+            font-family: "TTNormsPro", sans-serif;
+        }
     }
     &__item:nth-child(1) {
         border-right: 8px black solid;

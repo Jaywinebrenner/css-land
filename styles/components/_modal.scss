@@ -31,6 +31,13 @@
         align-items: center;
         justify-content: center;
       }
+      .other-exp-a-tag {
+        color: black;
+        font-size: 32px;
+        font-family: "TTNormsPro", sans-serif;
+        display: block;
+        font-weight: bold;
+      }
   
       &_content {
         display: flex;
@@ -80,6 +87,9 @@
     }
     .other-experience-wrapper {
       overflow: auto;
+      h3 {
+        font-size: 26px;
+      }
     }
     .awards-wrapper {
       background: url('/fireworks.gif') no-repeat;
@@ -89,6 +99,18 @@
       justify-content: center;
       padding: 20px;
       height: 100%;
+      h1 {
+        color: white;
+        display: inline;
+        margin: 0;
+      }
+      ul {
+        padding: 0;
+      }
+      ul li {
+        background-color: white;
+        padding: 12px;;
+      }
       @media (max-width: 800px) {
         background-image:none;
         padding: 0;
