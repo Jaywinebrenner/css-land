@@ -72,7 +72,6 @@ const Modal = ({ modalVisible, toggleModal, title  }) => {
                   awardsData.map((e, i) => {
                     return (
                         <li key={`award-info-key=${i}`}>{e}</li>
-                          
                           )
                         })
                         
@@ -101,7 +100,8 @@ const Modal = ({ modalVisible, toggleModal, title  }) => {
                 {title === "Education" ? 
                   <div className="education-modal">
                       <h3>EDUCATION</h3>
-                      <h1>Epicodus</h1>
+                      <a target="_blank" href="https://epicodus.com" className='epicodus'><img src="/epicodus-logo.png"/></a>
+                      {/* <a target="_blank" href="https://epicodus.com" className='epicodus'>Epicodus</a> */}
                       <p>2019 - 2020</p>
                       <div>
                         <ul>
