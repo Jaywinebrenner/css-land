@@ -1,3 +1,23 @@
+
+const BlogPost = () => {
+
+
+
+  return (
+    
+    <div className="post">
+
+    </div>
+  )
+}
+
+
+
+export default BlogPost;
+
+
+
+
 // import React, { useEffect } from 'react';
 // import Link from 'next/link';
 // import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
