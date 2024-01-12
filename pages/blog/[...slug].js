@@ -1,15 +1,20 @@
+// pages/blog/[...slug].js
+
 import React from 'react';
 
-const BlogPost = () => {
+const BlogPost = ({ slug }) => {
+  // `slug` will be an array containing the dynamic segments of the URL
   return (
     <div className="post">
       <h1>My Blog Post</h1>
-      <p>This is the content of my blog post. Replace it with your actual blog content.</p>
+      <p>This is the content of my blog post with slug: {slug.join('/')}</p>
     </div>
   );
 }
 
 export default BlogPost;
+
+// Example usage: If the URL is "/blog/post-1/post-2", `slug` will be ["post-1", "post-2"]
 
 
 
