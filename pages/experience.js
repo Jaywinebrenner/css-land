@@ -48,7 +48,7 @@ const Experience = () => {
                 <h2 style={{color: i === 0 ? "white" : "black"}}>{exp.year}</h2> 
                 <ul>
                 {exp.details.map((d, j) => (
-                  <li style={{ color: exp.job === 'Hello Cheshire' ? 'white!important' : 'black' }} key={`detail-key=${j}`}>{d}</li>
+                  <li style={{color: i === 0 ? "white" : "black"}} key={`detail-key=${j}`}>{d}</li>
                 ))}
                 </ul>
               </div>
@@ -59,7 +59,7 @@ const Experience = () => {
         <div className="experience__footer">
           <div onClick={()=> toggleModal()} className="experience__other-exp-wrapper">
            <FontAwesomeIcon className="gear" icon={faWrench} />
-            <h1>Other Experience</h1>
+            <h1>Non-Dev Experience</h1>
           </div>
         </div>
         <Modal otherExperience={otherExperience} modalVisible={modalVisible} title="Other Experience" toggleModal={toggleModal}></Modal>
@@ -71,22 +71,3 @@ const Experience = () => {
 
 export default Experience;
 
-
-export async function getServerSideProps() {
-
-  // const res = await fetch(`${process.env.API_BASE_JAYTOWN_TANNER_EUSTICE_DOT_COM}pages`);
-  // let props = await res.json();
-
-  // props.map((x) => {
-  //   if(x.slug === "experience") {
-  //     props = x.acf;
-  //     props = props;
-  //   }
-  //  })
-
-  return {
-    props: {
-      // props
-    },
-  };
-}

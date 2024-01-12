@@ -5,7 +5,7 @@ import 'nprogress/nprogress.css';
 import NProgress from 'nprogress';
 import Head from "next/head";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component }) {
 
   Router.events.on("routeChangeStart", () =>
   NProgress.start()
@@ -21,7 +21,7 @@ Router.events.on("routeChangeError", () =>
       {/* <Head>
       <link src="favicon.ico" />
       </Head> */}
-      <Component {...pageProps} />
+      <Component />
     </>
 
   )

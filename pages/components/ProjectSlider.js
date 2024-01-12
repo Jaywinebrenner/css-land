@@ -3,9 +3,10 @@ import React, {useState} from 'react';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import Link from 'next/link'
+import Link from 'next/link';
+import projectsData from '../../data/projectsData';
 
-export default function ProjectSlider({props}) {
+export default function ProjectSlider() {
 
     var settings = {
         dots: true,
@@ -23,16 +24,18 @@ export default function ProjectSlider({props}) {
 
             <Slider {...settings}>
                 {
-                    props &&
-                    props.slider.map((s, i) => {
+                    projectsData &&
+                    projectsData.map((s, i) => {
                         return (
                             <div key={`slider-key=${i}`} className="slider__slide">
-                                <img src={s.image.url}/>
+                                <img src={s.image}/>
                                 <div className="slider__text-wrapper">
                                 <Link href={s.url}>
                                     <a target="_blank" rel="noreferrer"><h2>{s.title}</h2></a>
                                 </Link>
-                                <div dangerouslySetInnerHTML={{ __html: s.body}}/>
+                                <div>
+                                    <p>{s.body}{s.link && <a target="_blank" rel="noreferrer" href={s.link.url}>{s.link.text}</a>}</p>
+                                </div>
                                 </div>
                             </div>
                         )

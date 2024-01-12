@@ -249,7 +249,8 @@
         border-right: 8px solid #000;
         width: 100%;
         position: relative;
-        height: 46vh;
+        height: 100%;
+        min-height: 380px;
         overflow: scroll;
         @media (max-width: 700px) {
             padding: 5px;;
