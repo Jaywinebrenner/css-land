@@ -48,7 +48,7 @@ const Experience = () => {
                 <h2 style={{color: i === 0 ? "white" : "black"}}>{exp.year}</h2> 
                 <ul>
                 {exp.details.map((d, j) => (
-                  <li style={{ color: exp.job === 'Hello Cheshire' ? 'white!important' : 'black' }} key={`detail-key=${j}`}>{d}</li>
+                  <li style={{color: i === 0 ? "white" : "black"}} key={`detail-key=${j}`}>{d}</li>
                 ))}
                 </ul>
               </div>
