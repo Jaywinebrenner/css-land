@@ -1,86 +1,113 @@
 
 
 .blog {
-    &__top {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: black;
-        height: 60px;
-        h1 {
-            color: white;
-            margin: 0;
-        }
-        .blog-arrow {
-            font-size: 30px;
-            color: white;
-            position: absolute;
-            left: 20px;
-            cursor: pointer;
-        }
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 150px;
+    &__wrapper {
+        text-align: center;
     }
-    &__filter-wrapper {
-        height: 30;
-        border-bottom: 8px solid black;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        h2, p {
-            margin: 2px;
-        }
-        .category {
-            cursor: pointer;
-            margin-left: 10px;
-        }
-        .active {
-            color: rgb(204, 26, 26);;
-        }
+    h1 {
+        margin: 0;
+        color: white;
+        font-size: 10rem;
     }
-    &__post-wrapper {
-        padding: 50px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr) 33%;
-        grid-gap: 10px;
-        @media (max-width: 1250px) {
-            grid-template-columns: 1fr 1fr;
-        }
-        @media (max-width: 880px) {
-            grid-template-columns: 1fr;
-            padding: 50px 0px;
-        }
-    }
-    &__post {
-        border: 8px solid black;
-        padding: 0 5px;
-        position: relative;
-        z-index: 100;
+    .arrow-wrapper {
+        background-color: white;
         cursor: pointer;
-        .post-image-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;    
-            padding-bottom: 20px;
-            img {
-                flex-shrink: 0;
-                height: 200px;
-            }
-        }
-        .post-title-wrapper {
-            text-align: center;
-            a {
-                text-decoration: none;
-            }
-            h1:hover {
-                color: white;
-            }
-        }
         &:hover {
             background-color: black;
         }
-        &:hover h1{
-            color: white;
+        &:hover .blog-arrow {
+           color: white;
+        }
+        .blog-arrow {
+            height: 10rem;
         }
     }
+    // &__top {
+    //     position: relative;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     background-color: black;
+    //     height: 60px;
+    //     h1 {
+    //         color: white;
+    //         margin: 0;
+    //     }
+    //     .blog-arrow {
+    //         font-size: 30px;
+    //         color: white;
+    //         position: absolute;
+    //         left: 20px;
+    //         cursor: pointer;
+    //     }
+    // }
+    // &__filter-wrapper {
+    //     height: 30;
+    //     border-bottom: 8px solid black;
+    //     display: flex;
+    //     align-items: center;
+    //     flex-wrap: wrap;
+    //     h2, p {
+    //         margin: 2px;
+    //     }
+    //     .category {
+    //         cursor: pointer;
+    //         margin-left: 10px;
+    //     }
+    //     .active {
+    //         color: rgb(204, 26, 26);;
+    //     }
+    // }
+    // &__post-wrapper {
+    //     padding: 50px;
+    //     display: grid;
+    //     grid-template-columns: repeat(2, 1fr) 33%;
+    //     grid-gap: 10px;
+    //     @media (max-width: 1250px) {
+    //         grid-template-columns: 1fr 1fr;
+    //     }
+    //     @media (max-width: 880px) {
+    //         grid-template-columns: 1fr;
+    //         padding: 50px 0px;
+    //     }
+    // }
+    // &__post {
+    //     border: 8px solid black;
+    //     padding: 0 5px;
+    //     position: relative;
+    //     z-index: 100;
+    //     cursor: pointer;
+    //     .post-image-wrapper {
+    //         display: flex;
+    //         justify-content: center;
+    //         align-items: center;
+    //         overflow: hidden;    
+    //         padding-bottom: 20px;
+    //         img {
+    //             flex-shrink: 0;
+    //             height: 200px;
+    //         }
+    //     }
+    //     .post-title-wrapper {
+    //         text-align: center;
+    //         a {
+    //             text-decoration: none;
+    //         }
+    //         h1:hover {
+    //             color: white;
+    //         }
+    //     }
+    //     &:hover {
+    //         background-color: black;
+    //     }
+    //     &:hover h1{
+    //         color: white;
+    //     }
+    // }
 }

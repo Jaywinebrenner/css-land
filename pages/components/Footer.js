@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
         <div className="footer__bottom">
             <div className="footer__bottom-left">
-                <Link href="/">
+                <Link href="/blog">
                     <h3>BLOG</h3>
                 </Link>
             </div>
