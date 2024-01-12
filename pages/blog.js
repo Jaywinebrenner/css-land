@@ -1,3 +1,20 @@
+import React from 'react';
+
+const Blog = ({ slug }) => {
+  // `slug` will be an array containing the dynamic segments of the URL
+  return (
+    <div className="post">
+      <h1>My Blog Post</h1>
+      <p>This is the content of my blog post with slug: {slug.join('/')}</p>
+    </div>
+  );
+}
+
+export default Blog;
+
+
+
+
 // import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import Link from 'next/link';
