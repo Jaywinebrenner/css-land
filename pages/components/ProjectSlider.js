@@ -30,7 +30,7 @@ export default function ProjectSlider({props}) {
                                 <img src={s.image.url}/>
                                 <div className="slider__text-wrapper">
                                 <Link href={s.url}>
-                                    <a target="_blank"><h2>{s.title}</h2></a>
+                                    <a target="_blank" rel="noreferrer"><h2>{s.title}</h2></a>
                                 </Link>
                                 <div dangerouslySetInnerHTML={{ __html: s.body}}/>
                                 </div>

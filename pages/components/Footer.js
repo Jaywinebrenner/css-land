@@ -21,10 +21,10 @@ const Footer = () => {
     <div className="footer">
         <div className="footer__top">
             <Link href="https://www.linkedin.com/in/jaywinebrenner/">
-                <a target="_blank"> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faLinkedin} /> </a>
+                <a target="_blank" rel="noreferrer"> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faLinkedin} /> </a>
             </Link>
             <Link href="https://github.com/Jaywinebrenner">
-                <a target="_blank"> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faGithubSquare} /> </a>
+                <a target="_blank" rel="noreferrer"> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faGithubSquare} /> </a>
             </Link>
             {/* <Link href="/draw">
                 <a> <FontAwesomeIcon color={"black"} className="social" size={"2x"}icon={faSquarePen} /> </a>

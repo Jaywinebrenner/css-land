@@ -35,7 +35,7 @@ const Modal = ({ modalVisible, toggleModal, title  }) => {
       const renderOtherExperienceLinks = (e) => {
         if (e.links) {
           return e.links.map((link, index) => (
-            <a target="_blank" className='other-exp-a-tag' key={`link-${index}`} href={link.url}>
+            <a target="_blank" rel="noreferrer" className='other-exp-a-tag' key={`link-${index}`} href={link.url}>
               {link.name}
             </a>
           ));
@@ -100,7 +100,7 @@ const Modal = ({ modalVisible, toggleModal, title  }) => {
                 {title === "Education" ? 
                   <div className="education-modal">
                       <h3>EDUCATION</h3>
-                      <a target="_blank" href="https://epicodus.com" className='epicodus'><img src="/epicodus-logo.png"/></a>
+                      <a target="_blank" rel="noreferrer" href="https://epicodus.com" className='epicodus'><img src="/epicodus-logo.png"/></a>
                       {/* <a target="_blank" href="https://epicodus.com" className='epicodus'>Epicodus</a> */}
                       <p>2019 - 2020</p>
                       <div>
