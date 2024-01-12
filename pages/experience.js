@@ -59,7 +59,7 @@ const Experience = () => {
         <div className="experience__footer">
           <div onClick={()=> toggleModal()} className="experience__other-exp-wrapper">
            <FontAwesomeIcon className="gear" icon={faWrench} />
-            <h1>Other Experience</h1>
+            <h1>Non-Dev Experience</h1>
           </div>
         </div>
         <Modal otherExperience={otherExperience} modalVisible={modalVisible} title="Other Experience" toggleModal={toggleModal}></Modal>
