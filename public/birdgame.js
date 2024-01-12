@@ -81,10 +81,7 @@ function play() {
 
             message.innerHTML = 'Press Enter To Restart';
             document.querySelector('.message-wrapper').style.display = 'block';
-            document.querySelector('.score').style.display = 'none';
-            console.log("background element:", document.querySelector(".background"));
             document.querySelector(".background").style.backgroundColor = 'rgba(255, 0, 0, 0.8)';
-            console.log("game bod", document.querySelector(".background"));
             return;
           } else {
             // Increase the score if player
