@@ -216,6 +216,10 @@
 
     &__main {
         display: flex;
+        border-bottom: 8px solid #000;
+        border-right: 8px solid #000;
+        border-left: 8px solid #000;
+
         @media (max-width: 1000px) {
             display: block;
             border-left: 8px solid #000;
@@ -233,7 +237,8 @@
     &__main-left {
         background-color: black;
         padding: 20px 100px;
-        flex: 0 0 50%;
+        // flex: 0 0 50%;
+        flex: 1;
         @media (max-width: 700px) {
             padding: 5px;;
         }
@@ -245,12 +250,13 @@
         padding: 75px 100px;
         // padding: 75px 100px 0 100px;
         background-color: white;
-        border-bottom: 8px solid #000;
-        border-right: 8px solid #000;
+        // border-bottom: 8px solid #000;
+        // border-right: 8px solid #000;
         width: 100%;
         position: relative;
         height: 46vh;
         overflow: scroll;
+        flex: 1;
         @media (max-width: 700px) {
             padding: 5px;;
         }
