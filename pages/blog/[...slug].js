@@ -1,19 +1,16 @@
+import React from 'react';
 
 const BlogPost = () => {
-
-
-
   return (
-    
     <div className="post">
-
+      <h1>My Blog Post</h1>
+      <p>This is the content of my blog post. Replace it with your actual blog content.</p>
     </div>
-  )
+  );
 }
 
-
-
 export default BlogPost;
+
 
 
 
