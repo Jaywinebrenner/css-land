@@ -2,12 +2,29 @@
     border: 8px solid black;
     min-height: 100vh;
     text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @media(max-width: 1200px){
+        grid-template-columns: 1fr;
+    }
+    .bored-link-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // border: 8px solid black;
+        &:hover  {
+            background-color: black;
+        }
+        &:hover h1 {
+           color: white;
+        }
+    }
     h1 {
-        font-size: 14rem;
+        font-size: 10rem;
         margin: 0;
         cursor: pointer;
         display: block;
-   
+
         @media(max-width: 900px){
             font-size: 10rem;
         }
@@ -16,9 +33,6 @@
         }
         @media(max-width: 450px){
             font-size: 5rem;
-        }
-        &:hover {
-            opacity: .4;
         }
     }
 }

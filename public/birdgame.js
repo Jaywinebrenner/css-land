@@ -1,3 +1,5 @@
+console.log("game_state")
+
 let game_state = 'Start';
 // Background scrolling speed
 let move_speed = 3;
@@ -26,14 +28,11 @@ let score_title =
 
 // Add an eventlistener for key presses
 document.addEventListener('keydown', (e) => {
-
-  // Start the game if enter key is pressed
-  if (e.key == 'Enter' &&
-    game_state != 'Play') {
-    document.querySelectorAll('.pipe_sprite')
-      .forEach((e) => {
-        e.remove();
-      });
+  // Start the game if the Enter key is pressed
+  if (e.key == 'Enter' && game_state != 'Play') {
+    document.querySelectorAll('.pipe_sprite').forEach((e) => {
+      e.remove();
+    });
     bird.style.top = '40vh';
     game_state = 'Play';
     message.innerHTML = '';
@@ -41,6 +40,10 @@ document.addEventListener('keydown', (e) => {
     score_val.innerHTML = '0';
     document.querySelector('.score').style.display = 'block';
     document.querySelector('.message-wrapper').style.display = 'none';
+
+    // Remove the red background
+    document.querySelector('.background').style.backgroundColor = ''; 
+
     play();
   }
 });
@@ -57,45 +60,47 @@ function play() {
       let pipe_sprite_props = element.getBoundingClientRect();
       bird_props = bird.getBoundingClientRect();
 
-      // Delete the pipes if they have moved out
-      // of the screen hence saving memory
-      if (pipe_sprite_props.right <= 0) {
-        element.remove();
-      } else {
-        // Collision detection with bird and pipes
-        if (
-          bird_props.left < pipe_sprite_props.left +
-          pipe_sprite_props.width &&
-          bird_props.left +
-          bird_props.width > pipe_sprite_props.left &&
-          bird_props.top < pipe_sprite_props.top +
-          pipe_sprite_props.height &&
-          bird_props.top +
-          bird_props.height > pipe_sprite_props.top
-        ) {
-
-          // Change game state and end the game
-          // if collision occurs
-          game_state = 'End';
-          message.innerHTML = 'Press Enter To Restart';
-          document.querySelector('.message-wrapper').style.display = 'block';
-          document.querySelector('.score').style.display = 'none';
-          return;
+        // Delete the pipes if they have moved out
+        // of the screen hence saving memory
+        if (pipe_sprite_props.right <= 0) {
+          element.remove();
         } else {
-          // Increase the score if player
-          // has the successfully dodged the pipe
+          const birdCenterX = bird_props.left + bird_props.width / 2;
+          const birdCenterY = bird_props.top + bird_props.height / 2;
+          const birdRadius = Math.min(bird_props.width, bird_props.height) / 4;
           if (
-            pipe_sprite_props.right < bird_props.left &&
-            pipe_sprite_props.right +
-            move_speed >= bird_props.left &&
-            element.increase_score == '1'
+              birdCenterX + birdRadius > pipe_sprite_props.left &&
+              birdCenterX - birdRadius < pipe_sprite_props.left + pipe_sprite_props.width &&
+              birdCenterY + birdRadius > pipe_sprite_props.top &&
+              birdCenterY - birdRadius < pipe_sprite_props.top + pipe_sprite_props.height
           ) {
-            score_val.innerHTML = +score_val.innerHTML + 1;
+  
+            // Change game state and end the game
+            // if collision occurs
+            game_state = 'End';
+
+            message.innerHTML = 'Press Enter To Restart';
+            document.querySelector('.message-wrapper').style.display = 'block';
+            document.querySelector('.score').style.display = 'none';
+            console.log("background element:", document.querySelector(".background"));
+            document.querySelector(".background").style.backgroundColor = 'rgba(255, 0, 0, 0.8)';
+            console.log("game bod", document.querySelector(".background"));
+            return;
+          } else {
+            // Increase the score if player
+            // has the successfully dodged the pipe
+            if (
+              pipe_sprite_props.right < bird_props.left &&
+              pipe_sprite_props.right +
+              move_speed >= bird_props.left &&
+              element.increase_score == '1'
+            ) {
+              score_val.innerHTML = +score_val.innerHTML + 1;
+            }
+            element.style.left =
+              pipe_sprite_props.left - move_speed + 'px';
           }
-          element.style.left =
-            pipe_sprite_props.left - move_speed + 'px';
         }
-      }
     });
 
     requestAnimationFrame(move);
@@ -166,3 +171,4 @@ function play() {
   }
   requestAnimationFrame(create_pipe);
 }
+
