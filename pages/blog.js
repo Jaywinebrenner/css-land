@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Blog = () => {
     return (
-        <section class="blog">
+        <section className="blog">
             <div className="blog__wrapper">
             <div className='arrow-wrapper'>            
                 <Link href="/">
