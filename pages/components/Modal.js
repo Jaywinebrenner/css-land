@@ -61,7 +61,7 @@ const Modal = ({ modalVisible, toggleModal, title  }) => {
         <div ref={ref} className="modal" >
           <main  className="modal_content">
               <div onClick={()=> toggleModal()} className="x">x</div>
-              <div 
+              {title !== "Image" && <div 
               className={`other-experience-wrapper ${title === "Awards" ? "awards-wrapper" : ""}`}
               style={{ display: title === "Education" ? 'none' : 'block' }}
               >
@@ -95,7 +95,7 @@ const Modal = ({ modalVisible, toggleModal, title  }) => {
                       })
                       
                       : null}
-                    </div>
+                </div>}
                 {title === "Image" ? <img src="jay.jpeg"/> : null}
                 {title === "Education" ? 
                   <div className="education-modal">
