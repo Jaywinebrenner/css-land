@@ -1,8 +1,8 @@
 const experienceData = [
     {
-        year: '2021-Current',
+        year: '2021-Current (Currently in mid re-brand to DGSF)',
         job: 'Hello Cheshire',
-        link: 'https://dgsf.com',
+        link: 'https://dgsf.co',
         details: [
           'Hello Cheshire is a full-service marketing agency specializing in cutting-edge modern website design.',
           'Build Headless WordPress + Next.js applications from scratch to launch.',
@@ -10,7 +10,7 @@ const experienceData = [
         ],
       },
       {
-        year: '2020-2021',
+        year: '2020-2021 (Freelanced)',
         job: 'I-ology',
         link: 'https://i-ology.com/',
         details: [
@@ -20,8 +20,8 @@ const experienceData = [
         ],
       },
     {
-      year: '2019-2020',
-      job: 'Hovrtek (Internship)',
+      year: '2019-2020 (Internship)',
+      job: 'Hovrtek',
       link: 'https://hovrtek.com',
       details: [
         'Worked on a robust iOS and Android mobile application using React Native.',
