@@ -1,6 +1,8 @@
 
 import React, {useState, useEffect} from 'react';
 import Link from 'next/link';
+import { faArrowLeft, faFileArrowDown, faTrashCan, faUpDownLeftRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Bored = () => {
 
@@ -13,7 +15,7 @@ const Bored = () => {
         <div className="bored">
             <div className='bored-link-wrapper'>
                 <Link href="/">
-                    <h1>HOME</h1>
+                    <FontAwesomeIcon className="bored-arrow" icon={faArrowLeft} />
                 </Link>
             </div>
             <div className='bored-link-wrapper'>

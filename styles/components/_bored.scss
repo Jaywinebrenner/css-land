@@ -18,6 +18,13 @@
         &:hover h1 {
            color: white;
         }
+        &:hover .bored-arrow {
+            color: white;
+            cursor: pointer;
+         }
+        .bored-arrow {
+            font-size: 10rem;
+        }
     }
     h1 {
         font-size: 10rem;

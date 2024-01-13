@@ -54,7 +54,7 @@ export default function Home({weatherData}) {
 
      
           <div className="home__hero-left-bottom--one">
-            <div >
+            <div className='deployed'>
                   <h3>THIS SITE WAS BUILT WITH NEXT.JS</h3>
                   <p>*It was deployed on Vercel.</p>
               </div>

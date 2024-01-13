@@ -93,6 +93,11 @@
         }
         &--one {
             display: flex;
+            .deployed {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
             @media (max-width: 1480px) {
                 border-bottom: 8px solid #000;
                 display: block;
@@ -247,7 +252,7 @@
         }
     }
     &__main-right {
-        padding: 75px 100px;
+        padding: 75px 100px 0 75px;
         // padding: 75px 100px 0 100px;
         background-color: white;
         // border-bottom: 8px solid #000;
