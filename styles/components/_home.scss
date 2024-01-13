@@ -185,8 +185,10 @@
         // justify-content: center;
         text-align: left;
         padding: 0 20px;
+        p {
+            margin-bottom:10px!important;
+        }
         h3 {
-            
             @media screen and (min-width: 1480px) and (max-width: 1545px) {
                 font-size: 58px;
               }

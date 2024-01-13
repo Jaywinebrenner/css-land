@@ -15,6 +15,12 @@ const projectsData = [
         body: "A NextJs built site for Portland Recording Engineer Eric Crespo."
     },
     {
+        image: "/drums.png",
+        url: "https://liampkenna.github.io/js-drumz/",
+        title: "JsDrumz",
+        body: "Music Web App comprised of 3 musical modules: Drum Machine, Ghost Machine, and the Mangle Machine. This was a collaborate project with 3 other students during my Tenue in Code school."
+    },
+    {
         image: "/old-dev.png",
         url: "https://jaywinebrenner.github.io/resume2020/",
         title: "My Old Development Website",
