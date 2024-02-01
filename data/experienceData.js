@@ -1,6 +1,6 @@
 const experienceData = [
     {
-        year: '2021-Current (Currently in mid re-brand to DGSF)',
+        year: '2021-February 2024',
         job: 'Hello Cheshire',
         link: 'https://dgsf.co',
         details: [

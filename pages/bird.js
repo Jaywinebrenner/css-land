@@ -45,6 +45,7 @@ const Bird = () => {
                 <h2 className="message">
                   Press Enter To Start Game
                 </h2>
+                <p style={{fontSize: "14px", margin: "0"}}>*Click Mouse to Jump</p>
               </div>
               <div className="score">
                 <span className="score_title"></span>
