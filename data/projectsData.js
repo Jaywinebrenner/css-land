@@ -34,7 +34,7 @@ const projectsData = [
     },
     {
         image: "/carrot.png",
-        url: "https://die-trommelm-der-jugend.vercel.app/",
+        url: "https://redux-carrot-top.vercel.app/",
         title: "Video Game",
         body: "A React / Redux built video game in the vein of old school RPGs. Funnily enough, this was written about in popular culture website",
         link: {
