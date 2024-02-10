@@ -9,6 +9,12 @@ const projectsData = [
         body: "The Fruit Finder connects people to the pleniful fruit tree bounties in their neighborhood. The goal of The Fruit Finder is to document all fruit trees in the Portland area to provide fresh, delicious fruit to those in want and to prevent needless food waste. This is a Work-in-Progess that I code in my free time."
     },
     {
+        image: "/jake.png",
+        url: "https://jake-morris.vercel.app/",
+        title: "Jake Morris Drums",
+        body: "A static built ReactJs site for drummer Jake Morris."
+    },
+    {
         image: "/eric-crespo.png",
         url: "https://ericcrespo.com",
         title: "Eric Crespo",
