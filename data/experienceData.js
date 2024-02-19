@@ -2,7 +2,7 @@ const experienceData = [
     {
         year: '2021-February 2024',
         job: 'Hello Cheshire',
-        link: 'https://dgsf.co',
+        link: 'https://hellocheshire.com',
         details: [
           'Hello Cheshire is a full-service marketing agency specializing in cutting-edge modern website design.',
           'Build Headless WordPress + Next.js applications from scratch to launch.',
