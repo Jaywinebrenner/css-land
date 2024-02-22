@@ -21,6 +21,12 @@ const projectsData = [
         body: "A NextJs built site for Portland Recording Engineer Eric Crespo."
     },
     {
+        image: "/drac-ss.png",
+        url: "https://dracula-review-app-react.vercel.app/",
+        title: "Dracula Review App",
+        body: "A Full CRUD portfolio app made with React + Firebase"
+    },
+    {
         image: "/drums.png",
         url: "https://liampkenna.github.io/js-drumz/",
         title: "JsDrumz",
