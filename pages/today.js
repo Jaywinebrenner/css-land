@@ -55,9 +55,6 @@ const Today = () => {
         return formattedDate;
     };
 
-    console.log("selectedDate", selectedDate);
-    console.log("events", events);
-
     return (
         <section className="today">
             <div className="draw__top">
@@ -69,7 +66,7 @@ const Today = () => {
             <p className='info'>*This page was made with Firebase and the Puppeteer NPM package to scrape Wikipedia everyday via a Cron Job.</p>
             <div className='today__wrapper'>
                 <div className='image-wrapper'>
-                    {events ? <img src={events.imgSource} alt="Event" /> : <img src="/what-huh.gif" alt="Placeholder" />}
+                    {events ? <img src={events.imgSource} alt="Event" /> : <p>Loading...</p>}
                 </div>
                 <div className='content-wrapper'>
                     <h2 className='today'>{events && formatForDisplay(selectedDate)}</h2>
