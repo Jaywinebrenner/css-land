@@ -1,0 +1,35 @@
+
+
+.today {
+    .info {
+        text-align: center;
+        font-size: 16px;
+        padding: 0 10%;
+    }
+    .today {
+        margin-left: 40px;
+    }
+    &__wrapper {
+        padding: 0 10%;
+        padding-top: 67px;
+        display: flex;
+        gap: 50px;
+        @media(max-width:800px){
+            display: block;
+            padding-top: 0;
+        }
+        .image-wrapper {
+            @media(max-width:800px){
+                text-align: center;
+            }
+            img {
+                max-width: 275px;
+            }
+        }
+        .content-wrapper {
+            li {
+                margin-bottom: 12px;
+            }
+        }
+    }
+}
