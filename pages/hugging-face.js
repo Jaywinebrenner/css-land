@@ -80,7 +80,7 @@ const HuggingFace = () => {
                 {imageUrl &&
                     <img src={imageUrl} alt="Result Image" /> 
                 }
-                {isError ? <p>Hmm. The HuggyFace model didn't like those words for some reason. Please try again.</p> : null}
+                {isError ? <p>Hmm. The HuggyFace model did not like those words for some reason. Please try again.</p> : null}
                 </div>
             </div>
 
