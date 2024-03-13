@@ -75,7 +75,7 @@ console.log("events", events)
                         events ?
                             <div className='list-wrapper'>
                                 {events.list.map((item, i) => (
-                                    <a target="_blank" className='list-item' href={item.link} key={`event-item-key=${i}`}>{item.text}</a>
+                                    <a target="_blank" rel="noreferrer" className='list-item' href={item.link} key={`event-item-key=${i}`}>{item.text}</a>
                                 ))}
                             </div>
                             :

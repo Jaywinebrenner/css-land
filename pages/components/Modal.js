@@ -101,7 +101,6 @@ const Modal = ({ modalVisible, toggleModal, title  }) => {
                   <div className="education-modal">
                       <h3>EDUCATION</h3>
                       <a target="_blank" rel="noreferrer" href="https://epicodus.com" className='epicodus'><img src="/epicodus-logo.png"/></a>
-                      {/* <a target="_blank" href="https://epicodus.com" className='epicodus'>Epicodus</a> */}
                       <p>2019 - 2020</p>
                       <div>
                         <ul>
