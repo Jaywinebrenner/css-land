@@ -10,7 +10,6 @@ This app is deployed to firebase and runs the scraper every day at midnight LA t
 Technlogies:
 
 Open Weather API,
-WP API
 NextJs
 Vercel - Hosting Frontend NextJs App
 Firebase 
