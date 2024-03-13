@@ -24,6 +24,11 @@ const Bored = () => {
                 </Link>
             </div>
             <div className='bored-link-wrapper'>
+                <Link href="/hugging-face">
+                    <h1>IMAGE</h1>
+                </Link>
+            </div>
+            <div className='bored-link-wrapper'>
                 <Link href="/draw">
                     <h1>DRAW</h1>
                 </Link>
