@@ -10,7 +10,8 @@ const HuggingFace = () => {
 
     const [imageUrl, setImageUrl] = useState(null);
     const [textInput, setTextInput] = useState('');
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false)
 
 
     const handleInputChange = (event) => {
@@ -31,6 +32,7 @@ const HuggingFace = () => {
     const processImage = async () => {
         setIsLoading(true);
         setImageUrl(null);
+        setIsError(false)
         const hf = new HfInference(process.env.HUGGING_FACE_API);
     
         try {
@@ -49,6 +51,7 @@ const HuggingFace = () => {
         } catch (error) {
             console.error("Error:", error);
             setIsLoading(false)
+            setIsError(true)
         }
     };
 
@@ -77,6 +80,7 @@ const HuggingFace = () => {
                 {imageUrl &&
                     <img src={imageUrl} alt="Result Image" /> 
                 }
+                {isError ? <p>Hmm. The HuggyFace model didn't like those words for some reason. Please try again.</p> : null}
                 </div>
             </div>
 

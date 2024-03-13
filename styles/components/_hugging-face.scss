@@ -14,7 +14,7 @@
             margin-top: 60px;
         }
         .hf-top {
-            padding: 0 60px 0 0;
+            // padding: 0 60px 0 0;
             input {
                 margin: auto;
                 width: 100%; 
@@ -46,6 +46,7 @@
         .hf-bottom {
             text-align: center;
             margin-bottom: 100px;
+            margin-top: 50px;
             img {
                 @media(max-width: 800px){
                     width: 100%;
