@@ -3,6 +3,12 @@
 
 const projectsData = [
     {
+        image: "/Unicorn.png",
+        url: "https://unicorn-soda.vercel.app/",
+        title: "Unicorn Cola",
+        body: "Unicorn Cola is not real, unfortunately. I certainly wish it were. I made this as an excercise using NextJs."
+    },
+    {
         image: "/fruit-tree.png",
         url: "https://desktop-vue-fruit-finder-ca2d4.web.app/",
         title: "Fruit Tree Finder",
