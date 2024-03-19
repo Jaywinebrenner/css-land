@@ -80,13 +80,13 @@ const Movies = () => {
             {movie.Plot && <h2>Plot: {movie.Plot}</h2>}
           </div>
           {<div className="movie__right">
-            {movie.Poster !== "N/A" && <img src={movie.Poster}></img>}
+            {movie.Poster !== "N/A" && <img loading="lazy" src={movie.Poster}></img>}
           </div>}
         </div>
       }
       </div>
         <div className="loader">
-          {loading && <img  src="loader.gif"/>}
+          {loading && <img loading="lazy"  src="loader.gif"/>}
         </div>
 
       {/* {movie && console.log("RES",movie.Response) } */}

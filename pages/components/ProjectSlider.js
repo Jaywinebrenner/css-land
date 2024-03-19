@@ -28,7 +28,7 @@ export default function ProjectSlider() {
                     projectsData.map((s, i) => {
                         return (
                             <div key={`slider-key=${i}`} className="slider__slide">
-                                <img src={s.image}/>
+                                <img loading="lazy" src={s.image}/>
                                 <div className="slider__text-wrapper">
                                 <Link href={s.url}>
                                     <a target="_blank" rel="noreferrer"><h2>{s.title}</h2></a>

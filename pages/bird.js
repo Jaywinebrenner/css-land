@@ -40,7 +40,7 @@ const Bird = () => {
           }
           {!isMobile &&
             <>
-              <img className="bird" src="/flying-crow.gif" alt="bird-img" />
+              <img loading="lazy" className="bird" src="/flying-crow.gif" alt="bird-img" />
               <div className="message-wrapper">
                 <h2 className="message">
                   Press Enter To Start Game

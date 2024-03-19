@@ -96,11 +96,11 @@ const Modal = ({ modalVisible, toggleModal, title  }) => {
                       
                       : null}
                 </div>}
-                {title === "Image" ? <img src="jay.jpeg"/> : null}
+                {title === "Image" ? <img loading="lazy" src="jay.jpeg"/> : null}
                 {title === "Education" ? 
                   <div className="education-modal">
                       <h3>EDUCATION</h3>
-                      <a target="_blank" rel="noreferrer" href="https://epicodus.com" className='epicodus'><img src="/epicodus-logo.png"/></a>
+                      <a target="_blank" rel="noreferrer" href="https://epicodus.com" className='epicodus'><img loading="lazy" src="/epicodus-logo.png"/></a>
                       <p>2019 - 2020</p>
                       <div>
                         <ul>

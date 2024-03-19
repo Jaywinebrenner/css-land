@@ -55,8 +55,8 @@ export default function Home({weatherData}) {
      
           <div className="home__hero-left-bottom--one">
             <div className='deployed'>
-                  <h3>THIS SITE WAS BUILT WITH NEXT.JS</h3>
-                  <p>*It was deployed on Vercel.</p>
+                  <h3>WEB DEVELOPER SPECIALIZING IN REACT & WORDPRESS</h3>
+                  <p>*Well, NextJs and Custom WordPress Theme Development to be specific</p>
               </div>
               <div className="home__hero-left-bottom--two">
                 <div className="weather-wrapper">
@@ -64,7 +64,7 @@ export default function Home({weatherData}) {
                    {description && <p>{description}</p>}
                    {temp && <p>{temp}° F</p>}
                    {weatherIcon && <div className="icon-wrapper">
-                      <img src={weatherIcon}/>
+                      <img loading="lazy" src={weatherIcon}/>
                    </div>}
                 </div>
               </div>

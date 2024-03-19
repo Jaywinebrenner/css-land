@@ -28,7 +28,7 @@ p {
 h3,
 .h3 {
   font-size: calc(42px + (64 - 42) * ((100vw - #{$minScreen}px) / (#{$maxScreen} - #{$minScreen})));
-  line-height: calc(33px + (50 - 33) * ((100vh - #{$minScreen}px) / (#{$maxScreen} - #{$minScreen})));
+  line-height: calc(40px + 17*(100vh - 300px) /(1366 - 300));
   margin: 10px 0;
 
   font-weight: normal;

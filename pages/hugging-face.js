@@ -78,7 +78,7 @@ const HuggingFace = () => {
                 <div className='hf-bottom'>
                 {isLoading ? <p>Loading...</p> : null}
                 {imageUrl &&
-                    <img src={imageUrl} alt="Result Image" /> 
+                    <img loading="lazy" src={imageUrl} alt="Result Image" /> 
                 }
                 {isError ? <p>Hmm. The HuggyFace model did not like those words for some reason. Please try again.</p> : null}
                 </div>

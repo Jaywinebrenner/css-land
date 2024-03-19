@@ -67,7 +67,7 @@ console.log("events", events)
             <h1 className='today'>{events && formatForDisplay(selectedDate)}</h1>
             <div className='today__wrapper'>
                 <div className='image-wrapper'>
-                    {events ? <img src={events.imgSource} alt="Event" /> : <p>Loading...</p>}
+                    {events ? <img loading="lazy" src={events.imgSource} alt="Event" /> : <p>Loading...</p>}
                 </div>
                 <div className='content-wrapper'>
         

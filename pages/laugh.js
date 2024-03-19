@@ -49,7 +49,7 @@ console.log("joke", currentJoke)
                 <h1>HA HA</h1>
             </div>
             {loading && <div className='laugh__icon-wrapper'>
-                <img src="/loader.gif"/>
+                <img loading="lazy" src="/loader.gif"/>
             </div>}
             {twoPartStep === 1 && !loading &&  <div onClick={()=>getJoke()} className='laugh__icon-wrapper'>
                 <FontAwesomeIcon color={"black"} className="laugh__icon-wrapper-icon" size={"7x"}icon={faFaceLaughSquint} />
