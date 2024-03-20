@@ -18,9 +18,24 @@ Router.events.on("routeChangeError", () =>
 );
   return (  
     <>
-      {/* <Head>
-      <link src="favicon.ico" />
-      </Head> */}
+    <Head>
+      {/* Google Analytics tracking code */}
+      <script
+        async
+        src={'https://www.googletagmanager.com/gtag/js?id=' + process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TRACKING_ID}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_TRACKING_ID}');
+          `,
+        }}
+      />
+    </Head>
       <Component {...pageProps} />
     </>
 
