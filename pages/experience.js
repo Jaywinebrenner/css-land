@@ -39,12 +39,12 @@ const Experience = () => {
           </div>
         <div className="experience__middle">
           {experienceData && experienceData.map((exp, i)=> {
-            console.log("exp", exp.details)
             return (
               <div key={`exp-item-key=${i}`} className="experience__item">
                 <a style={{color: i === 0 ? "white" : "black"}} href={exp.link} target="_blank" rel="noopener noreferrer">
                   {exp.job}
                 </a>
+                {exp.subtitle && <p className='subtitle'>(Recently rebranded as DGSF)</p>}
                 <h2 style={{color: i === 0 ? "white" : "black"}}>{exp.year}</h2> 
                 <ul>
                 {exp.details.map((d, j) => (

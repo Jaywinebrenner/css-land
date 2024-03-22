@@ -21,8 +21,10 @@ const Today = () => {
     const getThisDayEvents = async (day) => {
         try {
             const daysRef = doc(db, `day/${day}`);
-            const docSnap = await getDoc(daysRef);console.log("DAY", docSnap.data())
+            const docSnap = await getDoc(daysRef);
+            console.log("Document Snapshot:", docSnap); // Log the document snapshot
             if (docSnap.exists()) {
+                console.log("Document Data:", docSnap.data()); // Log the document data
                 return docSnap.data();
             } else {
                 console.log("Document does not exist");
@@ -33,6 +35,7 @@ const Today = () => {
             return null;
         }
     };
+    
 
     const getEvents = (day) => {
         getThisDayEvents(getFormattedDay(day)).then((res) => {
