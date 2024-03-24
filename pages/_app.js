@@ -1,4 +1,3 @@
-
 import "../styles/app.scss";
 import Router from 'next/router';
 import 'nprogress/nprogress.css';
@@ -19,6 +18,13 @@ Router.events.on("routeChangeError", () =>
   return (  
     <>
     <Head>
+      {/* Open Graph meta tags */}
+      <meta property="og:title" content="Jay Winebrenner Web Developer Portfolio" />
+      <meta property="og:description" content="A website which showcases Jay Winebrenner development portfolio, work history and various development projects." />
+      <meta property="og:image" content="https://www.jaywinebrenner.com/graph-image2.png" />
+      <meta property="og:url" content="https://www.jaywinebrennner.com" />
+      <meta property="og:type" content="website" />
+
       {/* Google Analytics tracking code */}
       <script
         async
