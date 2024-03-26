@@ -1,7 +1,7 @@
 
 import React, {useState, useEffect} from 'react';
 import Link from 'next/link';
-import { faArrowLeft, faWrench } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faWrench, faDownload} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Modal from './components/Modal';
 import otherExperienceData from '../data/otherExperienceData';
@@ -57,9 +57,11 @@ const Experience = () => {
         </div>
 
         <div className="experience__footer">
-          <div onClick={()=> toggleModal()} className="experience__other-exp-wrapper">
+          <div className="experience__other-exp-wrapper">
            <FontAwesomeIcon className="gear" icon={faWrench} />
-            <h1>Non-Dev Experience</h1>
+            <h1 onClick={()=> toggleModal()}>Non-Dev Experience</h1>
+            <FontAwesomeIcon className="download" icon={faDownload} />
+            <a className='download-a-tag' href="/resume.pdf" download target="_blank"><h1>Download Current Resume</h1></a>
           </div>
         </div>
         <Modal otherExperience={otherExperience} modalVisible={modalVisible} title="Other Experience" toggleModal={toggleModal}></Modal>
