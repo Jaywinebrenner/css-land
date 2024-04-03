@@ -50,7 +50,7 @@ const Footer = () => {
             </div>
             <div className="footer__bottom-right">
                 <Link href="/bored">
-                    <h3>BORED?</h3>
+                    <h3>FUN</h3>
                 </Link>
             </div>
         </div>
